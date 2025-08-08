@@ -25,14 +25,6 @@ export default function LandingPage() {
       <ProductsSection id="products" />
       <ContactSection id="contact" />
       <Footer />
-
-      {/* Additional sections will be added here */}
-      {/* 
-        - About Section
-        - Vision & Mission Section  
-        - Methodology Section
-        - Training Program Section
-      */}
     </div>
   );
 }

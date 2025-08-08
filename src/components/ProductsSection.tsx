@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { SectionProps } from "@/types";
 
 export const ProductsSection: React.FC<SectionProps> = ({
@@ -96,9 +97,11 @@ export const ProductsSection: React.FC<SectionProps> = ({
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
                   <div className="mb-4 sm:mb-0 sm:mr-4">
-                    <img
+                    <Image
                       src={product.logo}
                       alt={`${product.name} logo`}
+                      width={64}
+                      height={64}
                       className="h-16 w-auto max-w-full object-contain"
                     />
                   </div>

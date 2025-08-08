@@ -144,7 +144,8 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
             In the founded year 2024, MentorBridge took a significant step
             towards preparing students for the real world by launching Product
             Development Center at SSMIET. This initiative is more than just a
-            training program; it's a community where learners become leaders.
+            training program; it&apos;s a community where learners become
+            leaders.
           </p>
         </div>
 

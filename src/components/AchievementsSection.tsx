@@ -1,33 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import { SectionProps } from "@/types";
 
 export const AchievementsSection: React.FC<SectionProps> = ({
   className = "",
   id = "achievements",
 }) => {
-  const partners = [
-    {
-      name: "CodiFi",
-      logo: "🏢",
-      description: "Technology Solutions",
-    },
-    {
-      name: "Frigate",
-      logo: "🚢",
-      description: "Digital Innovation",
-    },
-    {
-      name: "TechJays",
-      logo: "🦅",
-      description: "Software Development",
-    },
-    {
-      name: "Kylonix",
-      logo: "⚡",
-      description: "Tech Solutions",
-    },
-  ];
-
   const students = [
     {
       name: "Kiruthika",
@@ -173,8 +151,7 @@ export const AchievementsSection: React.FC<SectionProps> = ({
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Our journey has been marked by significant milestones, with 100+
             students trained and lot of students successfully placed in leading
-            companies.
-            Here&apos;s our story of success.
+            companies. Here&apos;s our story of success.
           </p>
         </div>
 
@@ -220,9 +197,11 @@ export const AchievementsSection: React.FC<SectionProps> = ({
                 className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
               >
                 <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <img
+                  <Image
                     src={company.logo}
                     alt={`${company.name} logo`}
+                    width={120}
+                    height={48}
                     className="h-12 w-auto mx-auto object-contain"
                   />
                 </div>

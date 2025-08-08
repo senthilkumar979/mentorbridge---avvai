@@ -1,5 +1,6 @@
 import React from "react";
 import { Footer } from "@/components";
+import Link from "next/link";
 
 export default function TermsConditionsPage() {
   return (
@@ -9,23 +10,23 @@ export default function TermsConditionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <a
+              <Link
                 href="/"
                 className="text-2xl font-bold text-[#d53f8c] hover:text-[#b83280] transition-colors duration-300"
               >
                 MentorBridge
-              </a>
+              </Link>
               <span className="text-gray-400">|</span>
               <span className="text-gray-600 font-medium">
                 Terms & Conditions
               </span>
             </div>
-            <a
+            <Link
               href="/"
               className="text-[#d53f8c] hover:text-[#b83280] font-medium transition-colors duration-300"
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </header>

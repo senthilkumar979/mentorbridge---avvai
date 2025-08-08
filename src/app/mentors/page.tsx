@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
 import { Footer } from "@/components";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function MentorsPage() {
   const [activeMentorIndex, setActiveMentorIndex] = useState(0);
@@ -433,18 +433,18 @@ export default function MentorsPage() {
             extensive experience in leading companies worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/#contact"
               className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Apply for Mentorship
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               className="border-2 border-[#d53f8c] text-[#d53f8c] hover:bg-[#d53f8c] hover:text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105"
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </main>

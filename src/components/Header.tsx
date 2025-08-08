@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { BaseComponentProps } from "@/types";
 
@@ -9,14 +9,17 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navigationItems = [
-    { id: "home", label: "Home", href: "#home" },
-    { id: "what-we-do", label: "What We Do", href: "#what-we-do" },
-    { id: "features", label: "Features", href: "#features" },
-    { id: "products", label: "Products", href: "#products" },
-    { id: "mentors", label: "Mentors", href: "/mentors", isPage: true },
-    { id: "contact", label: "Contact", href: "#contact" },
-  ];
+  const navigationItems = useMemo(
+    () => [
+      { id: "home", label: "Home", href: "#home" },
+      { id: "what-we-do", label: "What We Do", href: "#what-we-do" },
+      { id: "features", label: "Features", href: "#features" },
+      { id: "products", label: "Products", href: "#products" },
+      { id: "mentors", label: "Mentors", href: "/mentors", isPage: true },
+      { id: "contact", label: "Contact", href: "#contact" },
+    ],
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +49,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navigationItems]);
 
   const scrollToSection = (href: string, isPage: boolean = false) => {
     if (isPage) {
