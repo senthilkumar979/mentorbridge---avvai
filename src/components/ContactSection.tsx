@@ -154,7 +154,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -174,7 +174,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -194,7 +194,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500 resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white resize-none"
                   placeholder="Tell us about your inquiry or how we can help you..."
                 />
               </div>

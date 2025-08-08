@@ -4126,7 +4126,7 @@ const ContactSection = (param)=>{
                                                     value: formData.name,
                                                     onChange: handleInputChange,
                                                     required: true,
-                                                    className: "w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500",
+                                                    className: "w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white",
                                                     placeholder: "Enter your full name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
@@ -4157,7 +4157,7 @@ const ContactSection = (param)=>{
                                                     value: formData.email,
                                                     onChange: handleInputChange,
                                                     required: true,
-                                                    className: "w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500",
+                                                    className: "w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white",
                                                     placeholder: "Enter your email address"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
@@ -4188,7 +4188,7 @@ const ContactSection = (param)=>{
                                                     onChange: handleInputChange,
                                                     required: true,
                                                     rows: 5,
-                                                    className: "w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#d53f8c] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500 resize-none",
+                                                    className: "w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white resize-none",
                                                     placeholder: "Tell us about your inquiry or how we can help you..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
@@ -4633,6 +4633,11 @@ const Header = (param)=>{
                     href: "#features"
                 },
                 {
+                    id: "achievements",
+                    label: "Achievements",
+                    href: "#achievements"
+                },
+                {
                     id: "products",
                     label: "Products",
                     href: "#products"
@@ -4721,17 +4726,17 @@ const Header = (param)=>{
                                     className: "h-8 sm:h-10 w-auto"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 87,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 78,
+                                lineNumber: 79,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -4749,18 +4754,18 @@ const Header = (param)=>{
                                             className: "absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ".concat(isScrolled ? "bg-[#d53f8c]" : "bg-white")
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 119,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, item.id, true, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 100,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 97,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4781,7 +4786,7 @@ const Header = (param)=>{
                                         d: "M6 18L18 6M6 6l12 12"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 147,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                         strokeLinecap: "round",
@@ -4790,28 +4795,28 @@ const Header = (param)=>{
                                         d: "M4 6h16M4 12h16M4 18h16"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 154,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 140,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 130,
+                                lineNumber: 131,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 129,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header.tsx",
-                    lineNumber: 75,
+                    lineNumber: 76,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 isMobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4828,28 +4833,28 @@ const Header = (param)=>{
                                 children: item.label
                             }, item.id, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 170,
+                                lineNumber: 171,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 168,
+                        lineNumber: 169,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Header.tsx",
-                    lineNumber: 167,
+                    lineNumber: 168,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Header.tsx",
-            lineNumber: 74,
+            lineNumber: 75,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/Header.tsx",
-        lineNumber: 67,
+        lineNumber: 68,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
