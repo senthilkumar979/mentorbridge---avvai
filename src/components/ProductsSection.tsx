@@ -8,6 +8,7 @@ export const ProductsSection: React.FC<SectionProps> = ({
 }) => {
   const products = [
     {
+      id: "securosphere",
       name: "SecuroSphere",
       logo: "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/securosphere-epORkcNMVS6f7iaVAUkYt8mFW1kp3L.png",
       description:
@@ -24,6 +25,7 @@ export const ProductsSection: React.FC<SectionProps> = ({
       color: "from-blue-500 to-cyan-500",
     },
     {
+      id: "stublab",
       name: "StubLab",
       logo: "https://www.stublab.in/static/media/stublab-logo.4487178ca0ee981e1d5bde82b1b38feb.svg",
       description:
@@ -36,14 +38,15 @@ export const ProductsSection: React.FC<SectionProps> = ({
         "Collaborative workspace",
         "Version control integration",
       ],
-      category: "API Testing Tool",
+      category: "API Testing",
       color: "from-green-500 to-emerald-500",
     },
     {
+      id: "stupro",
       name: "StuPro",
       logo: "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/logo-alone.png",
       description:
-        "From Student to Professional. A career wingman, making sure you never miss an opportunity to learn, practice, and grow. Faster | Smarter | Better",
+        "From Student to Professional. A career wingman, making sure you never miss an opportunity to learn, practice, and grow.",
       website: "https://www.stupro.info/",
       features: [
         "Career path guidance",
@@ -106,12 +109,12 @@ export const ProductsSection: React.FC<SectionProps> = ({
                     />
                   </div>
                   <div className="flex-1 text-center sm:text-left">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-accessible transition-colors duration-300">
+                      {product.name}
+                    </h2>
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-700 mb-2">
                       {product.category}
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#d53f8c] transition-colors duration-300">
-                      {product.name}
-                    </h3>
                   </div>
                 </div>
 
@@ -135,27 +138,28 @@ export const ProductsSection: React.FC<SectionProps> = ({
                 </div>
 
                 {/* Visit Website Button */}
-                <a
-                  href={product.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${product.color} text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group-hover:shadow-2xl`}
-                >
-                  <span className="mr-2">Visit Website</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <div className="flex space-y-8">
+                  <a
+                    href={`/product-detail/${product.id}`}
+                    className={`inline-flex items-center justify-center w-full bg-gray-200 text-gray-900 font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group-hover:shadow-2xl`}
+                    aria-label={`Learn more about ${product.name}`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </a>
+                    <span className="mr-2">Learn more</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 12h14M12 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           ))}

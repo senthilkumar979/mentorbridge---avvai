@@ -26,7 +26,7 @@ export const WhatWeDoSection: React.FC<SectionProps> = ({
         </svg>
       ),
       features: [
-        "Latest technologies: React, Node.js, Spring Boot, AWS",
+        "Latest & Trending technologies ",
         "Real-world project experience",
         "Industry-standard tools and practices",
         "Hands-on coding sessions daily",
@@ -205,9 +205,9 @@ export const WhatWeDoSection: React.FC<SectionProps> = ({
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-[#d53f8c] transition-colors duration-300">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-[#d53f8c] transition-colors duration-300">
                   {service.title}
-                </h3>
+                </h2>
                 <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   {service.description}
                 </p>

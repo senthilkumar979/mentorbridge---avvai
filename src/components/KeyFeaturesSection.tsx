@@ -251,9 +251,9 @@ export const KeyFeaturesSection: React.FC<SectionProps> = ({
                     <div className="text-white">{feature.icon}</div>
                   </div>
                   <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#d53f8c] transition-colors duration-300">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#d53f8c] transition-colors duration-300">
                       {feature.title}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
                 <p

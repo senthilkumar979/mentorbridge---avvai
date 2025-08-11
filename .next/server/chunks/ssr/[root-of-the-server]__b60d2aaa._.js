@@ -475,7 +475,7 @@ const HeroSection = ({ className = "", id = "home" })=>{
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                             className: "font-semibold text-white",
-                                                            children: "Free Training"
+                                                            children: "No Cost Training"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/HeroSection.tsx",
                                                             lineNumber: 195,
@@ -483,7 +483,7 @@ const HeroSection = ({ className = "", id = "home" })=>{
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-sm text-white/80",
-                                                            children: "No cost to students from rural areas"
+                                                            children: "Training at no cost to all the students"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/HeroSection.tsx",
                                                             lineNumber: 196,
@@ -566,7 +566,7 @@ const WhatWeDoSection = ({ className = "", id = "what-we-do" })=>{
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             features: [
-                "Latest technologies: React, Node.js, Spring Boot, AWS",
+                "Latest & Trending technologies ",
                 "Real-world project experience",
                 "Industry-standard tools and practices",
                 "Hands-on coding sessions daily"
@@ -1707,18 +1707,37 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-600 leading-relaxed mb-6",
-                                            children: "With the support of the SSM Institute of Engineering and Technology (SSMIET) placement team, dedicated faculties, and the visionary leadership of the Principal, MentorBridge has trained 32 students in cutting-edge technologies—completely free of cost."
-                                        }, void 0, false, {
+                                            children: [
+                                                "With the support of the",
+                                                " ",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Link, {
+                                                    className: "text-blue-500",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                        children: "SSM Institute of Engineering and Technology (SSMIET)"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
+                                                        lineNumber: 163,
+                                                        columnNumber: 19
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
+                                                    lineNumber: 162,
+                                                    columnNumber: 17
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                " ",
+                                                "placement team, dedicated faculties, and the visionary leadership of the Principal, MentorBridge has trained students in cutting-edge technologies—completely free of cost."
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
                                             lineNumber: 160,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-600 leading-relaxed",
-                                            children: "These 32 students have successfully developed enterprise-grade applications using modern tools by following Agile methodology."
+                                            children: "These students have successfully developed enterprise-grade applications using modern tools by following Agile methodology."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 169,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
@@ -1735,24 +1754,24 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-2xl font-bold mb-1",
-                                                    children: "Free Training"
+                                                    children: "Development Center"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 178,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-sm opacity-90",
-                                                    children: "No cost to students"
+                                                    children: "Corporate Work Environment"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 181,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 177,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1763,7 +1782,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                     children: "Enterprise Apps"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 180,
+                                                    lineNumber: 186,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1771,19 +1790,19 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                     children: "Real-world projects"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 181,
+                                                    lineNumber: 187,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 185,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 176,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -1802,7 +1821,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: achievement.icon
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 199,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1810,7 +1829,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: achievement.number
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 194,
+                                            lineNumber: 200,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1818,7 +1837,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: achievement.label
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 197,
+                                            lineNumber: 203,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1826,18 +1845,18 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: achievement.description
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 200,
+                                            lineNumber: 206,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 195,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 187,
+                            lineNumber: 193,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -1857,7 +1876,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                     children: "Training Program Phases"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 217,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1865,13 +1884,13 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                     children: "Our comprehensive training program was divided into 3 phases, each designed to build upon the previous one."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 220,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 210,
+                            lineNumber: 216,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1884,7 +1903,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: index + 1
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 233,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1897,12 +1916,12 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                         children: phase.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 242,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 233,
+                                                    lineNumber: 239,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1913,7 +1932,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                             children: phase.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                            lineNumber: 239,
+                                                            lineNumber: 245,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1921,19 +1940,19 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                             children: phase.duration
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                            lineNumber: 242,
+                                                            lineNumber: 248,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 238,
+                                                    lineNumber: 244,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 232,
+                                            lineNumber: 238,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1941,7 +1960,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                             children: phase.description
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 249,
+                                            lineNumber: 255,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1953,7 +1972,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                             className: `w-2 h-2 bg-gradient-to-r ${phase.color} rounded-full mt-2 mr-3 flex-shrink-0`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                            lineNumber: 257,
+                                                            lineNumber: 263,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1961,35 +1980,35 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                                             children: highlight
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                            lineNumber: 260,
+                                                            lineNumber: 266,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, highlightIndex, true, {
                                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                                    lineNumber: 256,
+                                                    lineNumber: 262,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                            lineNumber: 254,
+                                            lineNumber: 260,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 228,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 220,
+                            lineNumber: 226,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                    lineNumber: 209,
+                    lineNumber: 215,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2000,7 +2019,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                             children: "Visit Our Product Development Center"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 273,
+                            lineNumber: 279,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2008,7 +2027,7 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                             children: "Visit our Product Development Center where learners become leaders, and ideas transform into innovations. Witness the power of collaboration and innovation."
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 276,
+                            lineNumber: 282,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2018,18 +2037,18 @@ const ProductDevelopmentSection = ({ className = "", id = "product-development" 
                                 children: "Visit us"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                                lineNumber: 282,
+                                lineNumber: 288,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                            lineNumber: 281,
+                            lineNumber: 287,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProductDevelopmentSection.tsx",
-                    lineNumber: 272,
+                    lineNumber: 278,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

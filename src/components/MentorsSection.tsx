@@ -216,9 +216,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
                   <div className="space-y-8">
                     {/* Personal Story */}
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
                         About
-                      </h4>
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">
                         {mentor.personalStory}
                       </p>
@@ -226,9 +226,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Education */}
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
-                        Education
-                      </h4>
+                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      Education
+                    </h3>
                       <div className="space-y-4">
                         {mentor.education.map((edu, eduIndex) => (
                           <div
@@ -254,9 +254,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Experience */}
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
-                        Experience
-                      </h4>
+                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      Experience
+                    </h3>
                       <div className="space-y-4">
                         {mentor.experience.map((exp, expIndex) => (
                           <div
@@ -285,9 +285,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
                   <div className="space-y-8">
                     {/* Skills */}
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
-                        Skills
-                      </h4>
+                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      Skills
+                    </h3>
                       <div className="flex flex-wrap gap-2">
                         {mentor.skills.map((skill, skillIndex) => (
                           <span
@@ -302,9 +302,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Interests */}
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
                         Interests
-                      </h4>
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {mentor.interests.map((interest, interestIndex) => (
                           <span
@@ -319,9 +319,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Favorite Quote */}
                     <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
                         Favorite Quote
-                      </h4>
+                      </h3>
                       <blockquote className="text-gray-700 italic leading-relaxed">
                         &ldquo;{mentor.quote}&rdquo;
                       </blockquote>
@@ -330,9 +330,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
                     {/* Inspirations */}
                     {mentor.inspirations.length > 0 && (
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-4">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">
                           Inspirations
-                        </h4>
+                        </h3>
                         <div className="flex flex-wrap gap-2">
                           {mentor.inspirations.map((inspiration, inspIndex) => (
                             <span

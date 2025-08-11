@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   keywords:
     "mentorship, rural students, IT training, software development, career guidance, SSMIET",
   authors: [{ name: "MentorBridge Team" }],
+  creator: "MentorBridge Team",
+  publisher: "MentorBridge",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "https://www.mentorbridge.in/favicon.ico",
   },
@@ -32,6 +36,14 @@ export const metadata: Metadata = {
     title: "MentorBridge",
     description: "Bridging the Gap Between Learning and Industry",
     type: "website",
+    locale: "en_US",
+    siteName: "MentorBridge",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MentorBridge - Bridging the Gap Between Learning and Industry",
+    description:
+      "MentorBridge is a Not-For-Profit community helping rural students prepare for the IT industry through hands-on training, mentorship, and real-world project experience.",
   },
 };
 

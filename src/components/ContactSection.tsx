@@ -112,9 +112,9 @@ export const ContactSection: React.FC<SectionProps> = ({
                   <div className="flex items-start space-x-4">
                     <div className="text-3xl">{info.icon}</div>
                     <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
                         {info.title}
-                      </h4>
+                      </h3>
                       <p className="text-lg text-[#d53f8c] font-semibold mb-2">
                         {info.details}
                       </p>
@@ -243,11 +243,11 @@ export const ContactSection: React.FC<SectionProps> = ({
 
             {/* Form Note */}
             <div className="mt-6 text-center">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-600">
                 By submitting this form, you agree to our{" "}
                 <a
                   href="/privacy-policy"
-                  className="text-[#d53f8c] hover:underline"
+                  className="text-primary-accessible font-semibold underline hover:text-primary-accessible-darker transition-colors duration-300"
                 >
                   privacy policy
                 </a>

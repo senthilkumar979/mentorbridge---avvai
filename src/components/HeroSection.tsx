@@ -10,7 +10,7 @@ export const HeroSection: React.FC<SectionProps> = ({
       id={id}
       className={`pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 relative overflow-hidden ${className}`}
       style={{
-        background: "linear-gradient(135deg, #e53e8c 0%, #f5b5cd 100%)",
+        background: "linear-gradient(220deg, #e53e8c -20%, #f5b5cd 100%)",
       }}
     >
       {/* Animated Background Elements */}
@@ -140,9 +140,9 @@ export const HeroSection: React.FC<SectionProps> = ({
                   </svg>
                 </div>
                 <div className="text-center sm:text-left">
-                  <h3 className="font-semibold text-white">
+                  <h2 className="text-lg font-semibold text-white">
                     Industry-Ready Skills
-                  </h3>
+                  </h2>
                   <p className="text-sm text-white/80">
                     Latest technologies and real-world projects
                   </p>
@@ -166,9 +166,9 @@ export const HeroSection: React.FC<SectionProps> = ({
                   </svg>
                 </div>
                 <div className="text-center sm:text-left">
-                  <h3 className="font-semibold text-white">
+                  <h2 className="text-lg font-semibold text-white">
                     Expert Mentorship
-                  </h3>
+                  </h2>
                   <p className="text-sm text-white/80">
                     Guidance from experienced professionals
                   </p>
@@ -192,9 +192,11 @@ export const HeroSection: React.FC<SectionProps> = ({
                   </svg>
                 </div>
                 <div className="text-center sm:text-left">
-                  <h3 className="font-semibold text-white">Free Training</h3>
+                  <h2 className="text-lg font-semibold text-white">
+                    No Cost Training
+                  </h2>
                   <p className="text-sm text-white/80">
-                    No cost to students from rural areas
+                    Training at no cost to all the students
                   </p>
                 </div>
               </div>

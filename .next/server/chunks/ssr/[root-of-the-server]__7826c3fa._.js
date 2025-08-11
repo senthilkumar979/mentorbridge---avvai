@@ -106,13 +106,24 @@ const metadata = {
             name: "MentorBridge Team"
         }
     ],
+    creator: "MentorBridge Team",
+    publisher: "MentorBridge",
+    robots: "index, follow",
+    viewport: "width=device-width, initial-scale=1",
     icons: {
         icon: "https://www.mentorbridge.in/favicon.ico"
     },
     openGraph: {
         title: "MentorBridge",
         description: "Bridging the Gap Between Learning and Industry",
-        type: "website"
+        type: "website",
+        locale: "en_US",
+        siteName: "MentorBridge"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "MentorBridge - Bridging the Gap Between Learning and Industry",
+        description: "MentorBridge is a Not-For-Profit community helping rural students prepare for the IT industry through hands-on training, mentorship, and real-world project experience."
     }
 };
 function RootLayout({ children }) {
@@ -123,12 +134,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 45,
+            lineNumber: 57,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 44,
+        lineNumber: 56,
         columnNumber: 5
     }, this);
 }

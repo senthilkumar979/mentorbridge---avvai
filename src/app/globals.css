@@ -6,6 +6,8 @@
   --primary: #d53f8c;
   --primary-dark: #b83280;
   --primary-light: #e53e8c;
+  --primary-accessible: #9d1b6b; /* Darker version for better contrast on white */
+  --primary-accessible-darker: #7a1452; /* Even darker for critical text */
 }
 
 @theme inline {
@@ -14,6 +16,8 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
+  --color-primary-accessible: var(--primary-accessible);
+  --color-primary-accessible-darker: var(--primary-accessible-darker);
   --font-sans: var(--font-lexend);
   --font-mono: var(--font-geist-mono);
 }
@@ -108,4 +112,101 @@ html {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #b83280;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Product Detail Page Styles */
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.prose ul {
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose .pain-points li {
+  margin-bottom: 1rem;
+}
+
+.prose .pain-points strong {
+  color: #dc2626;
+}
+
+.prose .features li {
+  margin-bottom: 1rem;
+}
+
+.prose .features strong {
+  color: #059669;
+}
+
+.prose .ideal-for li {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Accessible color utilities */
+.text-primary-accessible {
+  color: var(--primary-accessible);
+}
+
+.text-primary-accessible-darker {
+  color: var(--primary-accessible-darker);
+}
+
+.bg-primary-accessible {
+  background-color: var(--primary-accessible);
+}
+
+.bg-primary-accessible-darker {
+  background-color: var(--primary-accessible-darker);
+}
+
+.hover\:text-primary-accessible:hover {
+  color: var(--primary-accessible);
+}
+
+.hover\:text-primary-accessible-darker:hover {
+  color: var(--primary-accessible-darker);
 }

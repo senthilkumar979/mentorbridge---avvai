@@ -8,6 +8,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const navigationItems = useMemo(
     () => [
@@ -17,12 +18,21 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
       { id: "achievements", label: "Achievements", href: "#achievements" },
       { id: "products", label: "Products", href: "#products" },
       { id: "mentors", label: "Mentors", href: "/mentors", isPage: true },
+      { id: "students", label: "Students", href: "/students", isPage: true },
       { id: "contact", label: "Contact", href: "#contact" },
     ],
     []
   );
 
   useEffect(() => {
+    // Mark as client-side rendered
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       // Handle scroll effect for header background
       setIsScrolled(window.scrollY > 50);
@@ -48,6 +58,9 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
       }
     };
 
+    // Set initial state
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navigationItems]);
@@ -67,10 +80,11 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isClient && isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
           : "bg-transparent"
       } ${className}`}
+      suppressHydrationWarning
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -85,10 +99,10 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
               className="flex items-center space-x-2"
             >
               <Image
-                src="https://www.mentorbridge.in/_next/static/media/icon-logo-horizontal.2500857b.svg"
+                src="https://91qunajyvl11yxyb.public.blob.vercel-storage.com/long-logo"
                 alt="MentorBridge"
                 width={120}
-                height={40}
+                height={60}
                 className="h-8 sm:h-10 w-auto"
               />
             </a>
@@ -105,7 +119,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
                   scrollToSection(item.href, item.isPage);
                 }}
                 className={`text-sm font-medium transition-all duration-300 relative ${
-                  activeSection === item.id
+                  isClient && activeSection === item.id
                     ? isScrolled
                       ? "text-[#d53f8c]"
                       : "text-white"
@@ -115,7 +129,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
                 }`}
               >
                 {item.label}
-                {activeSection === item.id && !item.isPage && (
+                {isClient && activeSection === item.id && !item.isPage && (
                   <div
                     className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${
                       isScrolled ? "bg-[#d53f8c]" : "bg-white"
@@ -131,7 +145,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`transition-colors duration-300 ${
-                isScrolled
+                isClient && isScrolled
                   ? "text-gray-700 hover:text-[#d53f8c]"
                   : "text-white hover:text-white/80"
               }`}
@@ -176,7 +190,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
                     scrollToSection(item.href, item.isPage);
                   }}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                    activeSection === item.id && !item.isPage
+                    isClient && activeSection === item.id && !item.isPage
                       ? "text-[#d53f8c] bg-purple-50"
                       : "text-gray-700 hover:text-[#d53f8c] hover:bg-gray-50"
                   }`}

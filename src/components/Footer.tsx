@@ -58,7 +58,7 @@ export const Footer: React.FC<BaseComponentProps> = ({ className = "" }) => {
           {/* Copyright and Logo */}
           <div className="flex items-center justify-center md:justify-start mb-4">
             <Image
-              src="https://www.mentorbridge.in/_next/static/media/icon-logo-name.e2ea6baa.svg"
+              src="https://91qunajyvl11yxyb.public.blob.vercel-storage.com/logo"
               alt="MentorBridge"
               width={150}
               height={50}
