@@ -1,10 +1,10 @@
 {
   "/page": "/",
-  "/_not-found/page": "/_not-found",
-  "/mentors/page": "/mentors",
   "/privacy-policy/page": "/privacy-policy",
-  "/students/page": "/students",
-  "/student-detail/[id]/page": "/student-detail/[id]",
   "/product-detail/[id]/page": "/product-detail/[id]",
-  "/terms-conditions/page": "/terms-conditions"
+  "/students/page": "/students",
+  "/terms-conditions/page": "/terms-conditions",
+  "/_not-found/page": "/_not-found",
+  "/student-detail/[id]/page": "/student-detail/[id]",
+  "/mentors/page": "/mentors"
 }
