@@ -1,11 +1,10 @@
 {
-  "/favicon.ico/route": "/favicon.ico",
-  "/privacy-policy/page": "/privacy-policy",
   "/page": "/",
-  "/product-detail/[id]/page": "/product-detail/[id]",
   "/_not-found/page": "/_not-found",
-  "/student-detail/[id]/page": "/student-detail/[id]",
+  "/mentors/page": "/mentors",
+  "/privacy-policy/page": "/privacy-policy",
   "/students/page": "/students",
-  "/terms-conditions/page": "/terms-conditions",
-  "/mentors/page": "/mentors"
+  "/student-detail/[id]/page": "/student-detail/[id]",
+  "/product-detail/[id]/page": "/product-detail/[id]",
+  "/terms-conditions/page": "/terms-conditions"
 }

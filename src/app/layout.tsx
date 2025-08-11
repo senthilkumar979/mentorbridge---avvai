@@ -28,9 +28,8 @@ export const metadata: Metadata = {
   creator: "MentorBridge Team",
   publisher: "MentorBridge",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/logo",
+    icon: "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/favicon.ico",
   },
   openGraph: {
     title: "MentorBridge",
@@ -45,6 +44,11 @@ export const metadata: Metadata = {
     description:
       "MentorBridge is a Not-For-Profit community helping rural students prepare for the IT industry through hands-on training, mentorship, and real-world project experience.",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
