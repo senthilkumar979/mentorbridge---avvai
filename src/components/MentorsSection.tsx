@@ -11,7 +11,7 @@ export const MentorsSection: React.FC<SectionProps> = ({
       title: "Senior Specialist - Software Engineering | Education Mentor",
       avatar: "👨‍💻",
       about:
-        "Steering the helm at LTIMindTree as a Senior Specialist in Software Engineering, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
+        "Steering the helm at BNP Paribas Fortis as a Senior Developer II, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
       personalStory:
         "My inspirations, the books I've read, and the wisdom from my grandfathers have taught me a valuable lesson: what we give to the world with sincerity and dedication, returns to us in double measure. This understanding led me to mentorship, a support I lacked during my college years. I aspire to be the mentor I once needed, fostering collective growth in a world where material wealth often overshadows human values.",
       education: [
@@ -30,11 +30,18 @@ export const MentorsSection: React.FC<SectionProps> = ({
       ],
       experience: [
         {
+          role: "Senior Developer II",
+          company: "BNP Paribas Fortis",
+          period: "Jul 2025 - Present",
+          location: "Brussels, Belgium",
+          type: "On-site",
+        },
+        {
           role: "Senior Specialist - Software Engineering",
           company: "LTIMindTree",
-          period: "Oct 2024 - Present",
+          period: "Oct 2024 - Jun 2025",
           location: "Coimbatore, Tamil Nadu, India",
-          type: "Hybrid",
+          type: "Remote",
         },
         {
           role: "Senior Fullstack Engineer",
@@ -98,11 +105,18 @@ export const MentorsSection: React.FC<SectionProps> = ({
       ],
       experience: [
         {
+          role: "Associate Technical Architect",
+          company: "Expleo",
+          period: "May 2025 - Present",
+          location: "Brussels, Belgium",
+          type: "On-site",
+        },
+        {
           role: "Senior Java Developer",
           company: "LTIMindtree",
-          period: "Aug 2024 - Present",
+          period: "Aug 2024 - May 2025",
           location: "Coimbatore, Tamil Nadu, India",
-          type: "Hybrid",
+          type: "Remote",
         },
         {
           role: "Senior Software Engineer",
@@ -226,9 +240,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Education */}
                     <div>
-                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Education
-                    </h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        Education
+                      </h3>
                       <div className="space-y-4">
                         {mentor.education.map((edu, eduIndex) => (
                           <div
@@ -254,9 +268,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
 
                     {/* Experience */}
                     <div>
-                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Experience
-                    </h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        Experience
+                      </h3>
                       <div className="space-y-4">
                         {mentor.experience.map((exp, expIndex) => (
                           <div
@@ -285,9 +299,9 @@ export const MentorsSection: React.FC<SectionProps> = ({
                   <div className="space-y-8">
                     {/* Skills */}
                     <div>
-                                          <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Skills
-                    </h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        Skills
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {mentor.skills.map((skill, skillIndex) => (
                           <span

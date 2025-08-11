@@ -10,10 +10,10 @@ export default function MentorsPage() {
   const mentors = [
     {
       name: "Senthil Kumar Thangavel",
-      title: "Chief Coordinator of MentorBridge",
+      title: "Senior Specialist - Software Engineering | Education Mentor",
       avatar: "👨‍💻",
       about:
-        "Steering the helm at LTIMindTree as a Senior Specialist in Software Engineering, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
+        "Steering the helm at BNP Paribas Fortis as a Senior Developer II, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
       personalStory:
         "My inspirations, the books I've read, and the wisdom from my grandfathers have taught me a valuable lesson: what we give to the world with sincerity and dedication, returns to us in double measure. This understanding led me to mentorship, a support I lacked during my college years. I aspire to be the mentor I once needed, fostering collective growth in a world where material wealth often overshadows human values.",
       education: [
@@ -34,16 +34,16 @@ export default function MentorsPage() {
         {
           role: "Senior Developer II",
           company: "BNP Paribas Fortis",
-          period: "Jan 2025 - Present",
+          period: "Jul 2025 - Present",
           location: "Brussels, Belgium",
           type: "On-site",
         },
         {
           role: "Senior Specialist - Software Engineering",
           company: "LTIMindTree",
-          period: "Oct 2024 - Present",
+          period: "Oct 2024 - Jun 2025",
           location: "Coimbatore, Tamil Nadu, India",
-          type: "Hybrid",
+          type: "Remote",
         },
         {
           role: "Senior Fullstack Engineer",
@@ -73,7 +73,7 @@ export default function MentorsPage() {
         "Training & Development",
       ],
       interests: ["Reading Books", "Mentoring", "Writing Blogs"],
-      quote: "Trust the process, respect the process & follow the process",
+      quote: "Be the change that you wish to see in the world",
       inspirations: [
         "Methagu Vellupillai Prabhakaran",
         "King Maker Kamaraj",
@@ -85,7 +85,7 @@ export default function MentorsPage() {
     },
     {
       name: "Dhileepan Dhanapal",
-      title: "Coordinator of MentorBridge",
+      title: "Senior Specialist - Cloud | Mentor",
       avatar: "👨‍💼",
       about:
         "A seasoned software engineer with over a decade of experience in enterprise application development. Specialized in Java, Spring, and cloud technologies with extensive experience in both European and Indian markets.",
@@ -107,11 +107,18 @@ export default function MentorsPage() {
       ],
       experience: [
         {
+          role: "Associate Technical Architect",
+          company: "Expleo",
+          period: "May 2025 - Present",
+          location: "Brussels, Belgium",
+          type: "On-site",
+        },
+        {
           role: "Senior Java Developer",
           company: "LTIMindtree",
-          period: "Aug 2024 - Present",
+          period: "Aug 2024 - May 2025",
           location: "Coimbatore, Tamil Nadu, India",
-          type: "Hybrid",
+          type: "Remote",
         },
         {
           role: "Senior Software Engineer",
@@ -177,21 +184,21 @@ export default function MentorsPage() {
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex items-center justify-between flex-wrap">
+            <div className="flex items-center space-x-2 sm:space-x-4 flex-grow">
               <Link
                 href="/"
-                className="text-2xl font-bold text-[#d53f8c] hover:text-[#b83280] transition-colors duration-300"
+                className="text-xl sm:text-2xl font-bold text-[#d53f8c] hover:text-[#0a0a0a] transition-colors duration-300"
               >
                 MentorBridge
               </Link>
-              <span className="text-gray-400">|</span>
-              <span className="text-gray-600 font-medium">Our Mentors</span>
+              <span className="hidden sm:inline text-gray-400">|</span>
+              <span className="text-gray-600 text-sm sm:text-base font-medium">Our Mentors</span>
             </div>
             <Link
               href="/"
-              className="text-[#d53f8c] hover:text-[#b83280] font-medium transition-colors duration-300"
+              className="text-[#d53f8c] hover:text-[#b83280] text-sm sm:text-base font-medium transition-colors duration-300 mt-2 sm:mt-0"
             >
               ← Back to Home
             </Link>
@@ -249,12 +256,12 @@ export default function MentorsPage() {
 
         {/* Mentor Selector */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-2xl p-2 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-2xl p-2 shadow-lg border border-gray-100 mx-auto flex flex-col sm:flex-row gap-2">
             {mentors.map((mentor, index) => (
               <button
                 key={index}
                 onClick={() => setActiveMentorIndex(index)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-xl font-medium text-center transition-all duration-300 ${
                   activeMentorIndex === index
                     ? "bg-[#d53f8c] text-white shadow-lg"
                     : "text-gray-600 hover:text-[#d53f8c] hover:bg-gray-50"

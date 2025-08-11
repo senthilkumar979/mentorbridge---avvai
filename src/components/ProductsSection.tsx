@@ -144,7 +144,9 @@ export const ProductsSection: React.FC<SectionProps> = ({
                     className={`inline-flex items-center justify-center w-full bg-gray-200 text-gray-900 font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group-hover:shadow-2xl`}
                     aria-label={`Learn more about ${product.name}`}
                   >
-                    <span className="mr-2">Learn more</span>
+                    <span className="mr-2">
+                      Learn more
+                    </span>
                     <svg
                       className="w-4 h-4"
                       fill="none"

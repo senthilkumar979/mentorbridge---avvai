@@ -2550,12 +2550,12 @@ const ProductsSection = (param)=>{
                                                             d: "M5 12h14M12 5l7 7-7 7"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                                            lineNumber: 154,
+                                                            lineNumber: 156,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 148,
+                                                        lineNumber: 150,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
@@ -2597,7 +2597,7 @@ const ProductsSection = (param)=>{
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 171,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2605,7 +2605,7 @@ const ProductsSection = (param)=>{
                                     children: "Products Developed"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2613,13 +2613,13 @@ const ProductsSection = (param)=>{
                                     children: "Real-world solutions created by students"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 175,
+                                    lineNumber: 177,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 170,
+                            lineNumber: 172,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2630,7 +2630,7 @@ const ProductsSection = (param)=>{
                                     children: "100%"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 182,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2638,7 +2638,7 @@ const ProductsSection = (param)=>{
                                     children: "Student-Driven"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 181,
+                                    lineNumber: 183,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2646,13 +2646,13 @@ const ProductsSection = (param)=>{
                                     children: "From concept to deployment by learners"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 179,
+                            lineNumber: 181,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2663,7 +2663,7 @@ const ProductsSection = (param)=>{
                                     children: "Live"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 191,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2671,7 +2671,7 @@ const ProductsSection = (param)=>{
                                     children: "Production Ready"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 192,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2679,19 +2679,19 @@ const ProductsSection = (param)=>{
                                     children: "Deployed and accessible to users worldwide"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 193,
+                                    lineNumber: 195,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 188,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProductsSection.tsx",
-                    lineNumber: 169,
+                    lineNumber: 171,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2706,7 +2706,7 @@ const ProductsSection = (param)=>{
                                         children: "From Learning to Innovation"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 205,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2714,7 +2714,7 @@ const ProductsSection = (param)=>{
                                         children: "Our training program doesn't just teach skills—it empowers students to create real-world solutions. These products demonstrate the practical application of modern technologies and the entrepreneurial spirit we foster."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                        lineNumber: 206,
+                                        lineNumber: 208,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2729,25 +2729,25 @@ const ProductsSection = (param)=>{
                                                             className: "w-2 h-2 bg-[#d53f8c] rounded-full"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                                            lineNumber: 215,
+                                                            lineNumber: 217,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 214,
+                                                        lineNumber: 216,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Real-world problem solving"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 217,
+                                                        lineNumber: 219,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                                lineNumber: 213,
+                                                lineNumber: 215,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2759,25 +2759,25 @@ const ProductsSection = (param)=>{
                                                             className: "w-2 h-2 bg-[#d53f8c] rounded-full"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                                            lineNumber: 221,
+                                                            lineNumber: 223,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 220,
+                                                        lineNumber: 222,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Industry-standard development practices"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 223,
+                                                        lineNumber: 225,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 221,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2789,37 +2789,37 @@ const ProductsSection = (param)=>{
                                                             className: "w-2 h-2 bg-[#d53f8c] rounded-full"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                                            lineNumber: 227,
+                                                            lineNumber: 229,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 226,
+                                                        lineNumber: 228,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "User-centered design and development"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                                        lineNumber: 229,
+                                                        lineNumber: 231,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                                lineNumber: 225,
+                                                lineNumber: 227,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProductsSection.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 214,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                lineNumber: 202,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2832,7 +2832,7 @@ const ProductsSection = (param)=>{
                                             children: "🎯"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                            lineNumber: 235,
+                                            lineNumber: 237,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2840,7 +2840,7 @@ const ProductsSection = (param)=>{
                                             children: "Innovation Hub"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                            lineNumber: 236,
+                                            lineNumber: 238,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2848,29 +2848,29 @@ const ProductsSection = (param)=>{
                                             children: "Where ideas become reality"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProductsSection.tsx",
-                                            lineNumber: 237,
+                                            lineNumber: 239,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProductsSection.tsx",
-                                    lineNumber: 234,
+                                    lineNumber: 236,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                lineNumber: 233,
+                                lineNumber: 235,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProductsSection.tsx",
-                        lineNumber: 201,
+                        lineNumber: 203,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProductsSection.tsx",
-                    lineNumber: 200,
+                    lineNumber: 202,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2881,7 +2881,7 @@ const ProductsSection = (param)=>{
                             children: "Ready to Build Your Own Product?"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 247,
+                            lineNumber: 249,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2889,7 +2889,7 @@ const ProductsSection = (param)=>{
                             children: "Join our training program and turn your ideas into innovative solutions. Learn the skills needed to create products that make a real impact."
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 250,
+                            lineNumber: 252,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2907,18 +2907,18 @@ const ProductsSection = (param)=>{
                                 children: "Start Building"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProductsSection.tsx",
-                                lineNumber: 256,
+                                lineNumber: 258,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProductsSection.tsx",
-                            lineNumber: 255,
+                            lineNumber: 257,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProductsSection.tsx",
-                    lineNumber: 246,
+                    lineNumber: 248,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
@@ -2957,7 +2957,7 @@ const MentorsSection = (param)=>{
             name: "Senthil Kumar Thangavel",
             title: "Senior Specialist - Software Engineering | Education Mentor",
             avatar: "👨‍💻",
-            about: "Steering the helm at LTIMindTree as a Senior Specialist in Software Engineering, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
+            about: "Steering the helm at BNP Paribas Fortis as a Senior Developer II, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
             personalStory: "My inspirations, the books I've read, and the wisdom from my grandfathers have taught me a valuable lesson: what we give to the world with sincerity and dedication, returns to us in double measure. This understanding led me to mentorship, a support I lacked during my college years. I aspire to be the mentor I once needed, fostering collective growth in a world where material wealth often overshadows human values.",
             education: [
                 {
@@ -2975,11 +2975,18 @@ const MentorsSection = (param)=>{
             ],
             experience: [
                 {
+                    role: "Senior Developer II",
+                    company: "BNP Paribas Fortis",
+                    period: "Jul 2025 - Present",
+                    location: "Brussels, Belgium",
+                    type: "On-site"
+                },
+                {
                     role: "Senior Specialist - Software Engineering",
                     company: "LTIMindTree",
-                    period: "Oct 2024 - Present",
+                    period: "Oct 2024 - Jun 2025",
                     location: "Coimbatore, Tamil Nadu, India",
-                    type: "Hybrid"
+                    type: "Remote"
                 },
                 {
                     role: "Senior Fullstack Engineer",
@@ -3045,11 +3052,18 @@ const MentorsSection = (param)=>{
             ],
             experience: [
                 {
+                    role: "Associate Technical Architect",
+                    company: "Expleo",
+                    period: "May 2025 - Present",
+                    location: "Brussels, Belgium",
+                    type: "On-site"
+                },
+                {
                     role: "Senior Java Developer",
                     company: "LTIMindtree",
-                    period: "Aug 2024 - Present",
+                    period: "Aug 2024 - May 2025",
                     location: "Coimbatore, Tamil Nadu, India",
-                    type: "Hybrid"
+                    type: "Remote"
                 },
                 {
                     role: "Senior Software Engineer",
@@ -3123,14 +3137,14 @@ const MentorsSection = (param)=>{
                                     className: "w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 188,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Meet Our Mentors"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 173,
+                            lineNumber: 187,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3138,7 +3152,7 @@ const MentorsSection = (param)=>{
                             children: "The Visionaries Behind MentorBridge"
                         }, void 0, false, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 177,
+                            lineNumber: 191,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3146,13 +3160,13 @@ const MentorsSection = (param)=>{
                             children: "Meet the experienced professionals who dedicate their time and expertise to guide students from rural areas towards successful careers in the IT industry."
                         }, void 0, false, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 180,
+                            lineNumber: 194,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/MentorsSection.tsx",
-                    lineNumber: 172,
+                    lineNumber: 186,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3173,7 +3187,7 @@ const MentorsSection = (param)=>{
                                                         children: mentor.avatar
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 200,
+                                                        lineNumber: 214,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3181,7 +3195,7 @@ const MentorsSection = (param)=>{
                                                         children: mentor.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 201,
+                                                        lineNumber: 215,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3189,13 +3203,13 @@ const MentorsSection = (param)=>{
                                                         children: mentor.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 218,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                lineNumber: 199,
+                                                lineNumber: 213,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3205,23 +3219,23 @@ const MentorsSection = (param)=>{
                                                     children: mentor.about
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                                    lineNumber: 207,
+                                                    lineNumber: 221,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                lineNumber: 206,
+                                                lineNumber: 220,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 212,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 209,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3239,7 +3253,7 @@ const MentorsSection = (param)=>{
                                                                 children: "About"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 219,
+                                                                lineNumber: 233,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3247,13 +3261,13 @@ const MentorsSection = (param)=>{
                                                                 children: mentor.personalStory
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 222,
+                                                                lineNumber: 236,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 218,
+                                                        lineNumber: 232,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3263,8 +3277,8 @@ const MentorsSection = (param)=>{
                                                                 children: "Education"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 229,
-                                                                columnNumber: 43
+                                                                lineNumber: 243,
+                                                                columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "space-y-4",
@@ -3276,7 +3290,7 @@ const MentorsSection = (param)=>{
                                                                                 children: edu.degree
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 238,
+                                                                                lineNumber: 252,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3284,7 +3298,7 @@ const MentorsSection = (param)=>{
                                                                                 children: edu.institution
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 241,
+                                                                                lineNumber: 255,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3292,7 +3306,7 @@ const MentorsSection = (param)=>{
                                                                                 children: edu.specialization
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 244,
+                                                                                lineNumber: 258,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3300,24 +3314,24 @@ const MentorsSection = (param)=>{
                                                                                 children: edu.period
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 247,
+                                                                                lineNumber: 261,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, eduIndex, true, {
                                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                        lineNumber: 234,
+                                                                        lineNumber: 248,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 232,
+                                                                lineNumber: 246,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 242,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3327,8 +3341,8 @@ const MentorsSection = (param)=>{
                                                                 children: "Experience"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 257,
-                                                                columnNumber: 43
+                                                                lineNumber: 271,
+                                                                columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "space-y-4",
@@ -3340,7 +3354,7 @@ const MentorsSection = (param)=>{
                                                                                 children: exp.role
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 266,
+                                                                                lineNumber: 280,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3348,7 +3362,7 @@ const MentorsSection = (param)=>{
                                                                                 children: exp.company
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 269,
+                                                                                lineNumber: 283,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3356,7 +3370,7 @@ const MentorsSection = (param)=>{
                                                                                 children: exp.period
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 272,
+                                                                                lineNumber: 286,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3368,30 +3382,30 @@ const MentorsSection = (param)=>{
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                                lineNumber: 275,
+                                                                                lineNumber: 289,
                                                                                 columnNumber: 29
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, expIndex, true, {
                                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                        lineNumber: 262,
+                                                                        lineNumber: 276,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 260,
+                                                                lineNumber: 274,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 256,
+                                                        lineNumber: 270,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                lineNumber: 216,
+                                                lineNumber: 230,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3404,8 +3418,8 @@ const MentorsSection = (param)=>{
                                                                 children: "Skills"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 288,
-                                                                columnNumber: 43
+                                                                lineNumber: 302,
+                                                                columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "flex flex-wrap gap-2",
@@ -3414,18 +3428,18 @@ const MentorsSection = (param)=>{
                                                                         children: skill
                                                                     }, skillIndex, false, {
                                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                        lineNumber: 293,
+                                                                        lineNumber: 307,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 291,
+                                                                lineNumber: 305,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 301,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3435,7 +3449,7 @@ const MentorsSection = (param)=>{
                                                                 children: "Interests"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 305,
+                                                                lineNumber: 319,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3445,18 +3459,18 @@ const MentorsSection = (param)=>{
                                                                         children: interest
                                                                     }, interestIndex, false, {
                                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                        lineNumber: 310,
+                                                                        lineNumber: 324,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 308,
+                                                                lineNumber: 322,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 304,
+                                                        lineNumber: 318,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3467,7 +3481,7 @@ const MentorsSection = (param)=>{
                                                                 children: "Favorite Quote"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 322,
+                                                                lineNumber: 336,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
@@ -3479,13 +3493,13 @@ const MentorsSection = (param)=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 325,
+                                                                lineNumber: 339,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 321,
+                                                        lineNumber: 335,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     mentor.inspirations.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3495,7 +3509,7 @@ const MentorsSection = (param)=>{
                                                                 children: "Inspirations"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 333,
+                                                                lineNumber: 347,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3505,46 +3519,46 @@ const MentorsSection = (param)=>{
                                                                         children: inspiration
                                                                     }, inspIndex, false, {
                                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                        lineNumber: 338,
+                                                                        lineNumber: 352,
                                                                         columnNumber: 29
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                                lineNumber: 336,
+                                                                lineNumber: 350,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                                        lineNumber: 332,
+                                                        lineNumber: 346,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/MentorsSection.tsx",
-                                                lineNumber: 285,
+                                                lineNumber: 299,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/MentorsSection.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 228,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 227,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, index, true, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 190,
+                            lineNumber: 204,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/MentorsSection.tsx",
-                    lineNumber: 188,
+                    lineNumber: 202,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3555,7 +3569,7 @@ const MentorsSection = (param)=>{
                             children: "Get Mentored by Industry Experts"
                         }, void 0, false, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 357,
+                            lineNumber: 371,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3563,7 +3577,7 @@ const MentorsSection = (param)=>{
                             children: "Join our program and learn directly from senior professionals with extensive experience in leading companies worldwide."
                         }, void 0, false, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 360,
+                            lineNumber: 374,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3582,7 +3596,7 @@ const MentorsSection = (param)=>{
                                     children: "Apply for Mentorship"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                    lineNumber: 365,
+                                    lineNumber: 379,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3598,30 +3612,30 @@ const MentorsSection = (param)=>{
                                     children: "Learn More"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/MentorsSection.tsx",
-                                    lineNumber: 376,
+                                    lineNumber: 390,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/MentorsSection.tsx",
-                            lineNumber: 364,
+                            lineNumber: 378,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/MentorsSection.tsx",
-                    lineNumber: 356,
+                    lineNumber: 370,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/MentorsSection.tsx",
-            lineNumber: 170,
+            lineNumber: 184,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/MentorsSection.tsx",
-        lineNumber: 166,
+        lineNumber: 180,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

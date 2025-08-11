@@ -9,7 +9,9 @@ interface ProductDetailPageProps {
   }>;
 }
 
-export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+export default async function ProductDetailPage({
+  params,
+}: ProductDetailPageProps) {
   const { id } = await params;
   const product = products.find((p) => p.id === id);
 
@@ -76,22 +78,16 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               </a>
             </div>
 
-            {/* Product Images */}
             <div className="space-y-4">
-              {product.images.map((image, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center"
-                >
-                  <Image
-                    src={image}
-                    alt={`${product.name} screenshot ${index + 1}`}
-                    width={400}
-                    height={300}
-                    className="rounded-xl object-contain max-h-64 w-auto"
-                  />
-                </div>
-              ))}
+              <div className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center">
+                <Image
+                  src={product.logo}
+                  alt={`${product.name} screenshot`}
+                  width={400}
+                  height={300}
+                  className="rounded-xl object-contain max-h-64 w-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
