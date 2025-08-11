@@ -73,7 +73,7 @@ export default function MentorsPage() {
         "Training & Development",
       ],
       interests: ["Reading Books", "Mentoring", "Writing Blogs"],
-      quote: "Be the change that you wish to see in the world",
+      quote: "Trust the process, respect the process & follow the process",
       inspirations: [
         "Methagu Vellupillai Prabhakaran",
         "King Maker Kamaraj",
@@ -394,7 +394,7 @@ export default function MentorsPage() {
                     Favorite Quote
                   </h4>
                   <blockquote className="text-gray-700 italic leading-relaxed">
-                    &ldquo;{activeMentor.quote}&rdquo;
+                    <b>&ldquo;{activeMentor.quote}&rdquo;</b>
                   </blockquote>
                 </div>
 

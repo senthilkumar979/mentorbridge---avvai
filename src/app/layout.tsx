@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "https://www.mentorbridge.in/favicon.ico",
+    icon: "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/logo",
   },
   openGraph: {
     title: "MentorBridge",

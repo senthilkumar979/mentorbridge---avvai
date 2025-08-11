@@ -4667,7 +4667,7 @@ function MentorsPage() {
                 "Mentoring",
                 "Writing Blogs"
             ],
-            quote: "Be the change that you wish to see in the world",
+            quote: "Trust the process, respect the process & follow the process",
             inspirations: [
                 "Methagu Vellupillai Prabhakaran",
                 "King Maker Kamaraj",
@@ -5289,12 +5289,18 @@ function MentorsPage() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
                                                             className: "text-gray-700 italic leading-relaxed",
-                                                            children: [
-                                                                "“",
-                                                                activeMentor.quote,
-                                                                "”"
-                                                            ]
-                                                        }, void 0, true, {
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                                children: [
+                                                                    "“",
+                                                                    activeMentor.quote,
+                                                                    "”"
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/app/mentors/page.tsx",
+                                                                lineNumber: 397,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        }, void 0, false, {
                                                             fileName: "[project]/src/app/mentors/page.tsx",
                                                             lineNumber: 396,
                                                             columnNumber: 19
