@@ -58,7 +58,36 @@
       "dangerouslyAllowSVG": false,
       "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
       "contentDispositionType": "attachment",
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "frigate.ai"
+        },
+        {
+          "protocol": "https",
+          "hostname": "cdn.prod.website-files.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "klyonix.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "wfkq0nguanh0273r.public.blob.vercel-storage.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "media.licdn.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "91qunajyvl11yxyb.public.blob.vercel-storage.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "www.mentorbridge.in"
+        }
+      ],
       "unoptimized": false
     },
     "devIndicators": {
@@ -80,7 +109,7 @@
     "serverRuntimeConfig": {},
     "publicRuntimeConfig": {},
     "reactProductionProfiling": false,
-    "reactStrictMode": null,
+    "reactStrictMode": true,
     "reactMaxHeadersLength": 6000,
     "httpAgentOptions": {
       "keepAlive": true
@@ -205,6 +234,8 @@
       "optimizeRouterScrolling": false,
       "strictNextHead": true,
       "optimizePackageImports": [
+        "react",
+        "react-dom",
         "lucide-react",
         "date-fns",
         "lodash-es",

@@ -1,9 +1,11 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/mentors/page": "app/mentors/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
   "/page": "app/page.js",
   "/product-detail/[id]/page": "app/product-detail/[id]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/student-detail/[id]/page": "app/student-detail/[id]/page.js",
-  "/students/page": "app/students/page.js"
+  "/students/page": "app/students/page.js",
+  "/terms-conditions/page": "app/terms-conditions/page.js",
+  "/mentors/page": "app/mentors/page.js"
 }

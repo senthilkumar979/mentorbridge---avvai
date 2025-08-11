@@ -5,7 +5,7 @@ import { ProfilesList } from "../data/students-2025";
 import { ProfileData } from "../../types/Profile.types";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Header } from "../../components";
+
 import Link from "next/link";
 
 export default function StudentsPage() {
@@ -366,49 +366,4 @@ function StudentCard({ profile, onClick }: StudentCardProps) {
       </div>
     </div>
   );
-}
-
-// Add custom CSS animations
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes fade-in-delay {
-    0% { opacity: 0; transform: translateY(20px); }
-    50% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
-  }
-  
-  .animate-fade-in-delay {
-    animation: fade-in-delay 1.2s ease-out;
-  }
-  
-  .animate-slide-up {
-    animation: slide-up 0.8s ease-out;
-  }
-  
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out;
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.head.appendChild(style);
 }

@@ -1,8 +1,11 @@
 {
   "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
+  "/privacy-policy/page": "/privacy-policy",
   "/page": "/",
-  "/mentors/page": "/mentors",
+  "/product-detail/[id]/page": "/product-detail/[id]",
+  "/_not-found/page": "/_not-found",
+  "/student-detail/[id]/page": "/student-detail/[id]",
+  "/students/page": "/students",
   "/terms-conditions/page": "/terms-conditions",
-  "/privacy-policy/page": "/privacy-policy"
+  "/mentors/page": "/mentors"
 }

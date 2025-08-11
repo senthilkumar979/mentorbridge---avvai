@@ -1093,7 +1093,7 @@ export const ProfilesList: ProfileData[] = [
         role: "Frontend Dev Engineer",
         summary:
           "Developed an e-commerce website using React and Tailwind CSS as per company requirements. Designed and implemented responsive UI components for an enhanced user experience. Documented front-end features for better maintainability and future updates.",
-        website: null,
+        website: undefined,
       },
     ],
     mentorBridgeExp: {
@@ -1163,5 +1163,5 @@ export const ProfilesList: ProfileData[] = [
     company: "MentorBridge",
     resumeLink:
       "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/mentorbridge-pics/Vishwadharshini.pdf",
-  }
+  },
 ];
