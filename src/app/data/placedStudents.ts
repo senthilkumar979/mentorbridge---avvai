@@ -1,5 +1,12 @@
 export const placedStudents = [
   {
+    name: "Balakrishnan",
+    company: "TechJays",
+    joiningDate: "22/05/2025",
+    avatar:
+      "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/mentorbridge-pics/balakrishnan.jpg",
+  },
+  {
     name: "Bavani",
     company: "TechJays",
     joiningDate: "07/07/2025",
