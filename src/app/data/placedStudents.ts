@@ -119,7 +119,7 @@ export const placedStudents = [
       "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/Thaarani.jpg",
   },
   {
-    name: "Umar Farooq",
+    name: "Umar Farook",
     company: "Frigate",
     joiningDate: "12/08/2025",
     avatar:
