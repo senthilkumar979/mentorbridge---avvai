@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 interface GalleryImage {
@@ -39,21 +39,21 @@ export const Gallery: React.FC<GalleryProps> = ({
     setImageLoading(false);
   };
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     const nextIndex = (currentIndex + 1) % images.length;
     setCurrentIndex(nextIndex);
     setImageLoading(true);
     setSelectedImage(images[nextIndex]);
-  };
+  }, [currentIndex, images]);
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(prevIndex);
     setImageLoading(true);
     setSelectedImage(images[prevIndex]);
-  };
+  }, [currentIndex, images]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "ArrowRight") {
       goToNext();
     } else if (e.key === "ArrowLeft") {
@@ -61,14 +61,14 @@ export const Gallery: React.FC<GalleryProps> = ({
     } else if (e.key === "Escape") {
       closeModal();
     }
-  };
+  }, [goToNext, goToPrevious, closeModal]);
 
   useEffect(() => {
     if (selectedImage) {
       document.addEventListener("keydown", handleKeyDown);
       return () => document.removeEventListener("keydown", handleKeyDown);
     }
-  }, [selectedImage, currentIndex]);
+  }, [selectedImage, handleKeyDown]);
 
   const gridColsClass = {
     "1": "grid-cols-1",
@@ -224,7 +224,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                   className="object-contain"
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                  onError={(e) => {
+                  onError={() => {
                     console.error("Image failed to load:", selectedImage.src);
                     setImageLoading(false);
                   }}
