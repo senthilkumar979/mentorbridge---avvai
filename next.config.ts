@@ -39,6 +39,34 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.mentorbridge.in",
       },
+      {
+        protocol: "https",
+        hostname: "cdn-images-1.medium.com",
+      },
+      {
+        protocol: "https",
+        hostname: "miro.medium.com",
+      },
+      {
+        protocol: "https",
+        hostname: "medium.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.medium.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
     ],
   },
 };
