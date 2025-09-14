@@ -9,11 +9,11 @@ export interface StudentRecord {
   company: string | null;
   summary: string;
   email: string;
-  experience: any[];
-  mentor_bridge_exp: any;
+  experience: unknown[];
+  mentor_bridge_exp: unknown;
   skill_sets: string[];
   inspirations: string[];
-  social_links: any;
+  social_links: unknown;
   resume_link: string | null;
   batch: string;
   created_at?: string;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { supabase } from "../lib/supabase";
 import { ProfileData } from "../types/Profile.types";
 
@@ -10,24 +10,24 @@ interface UseStudentReturn {
 }
 
 // Safe JSON parsing function
-const safeJsonParse = (value: any, fallback: any = null) => {
+const safeJsonParse = (value: unknown, fallback: unknown = null) => {
   if (!value) return fallback;
-  
+
   // If it's already an object/array, return it
-  if (typeof value === 'object') {
+  if (typeof value === "object") {
     return value;
   }
-  
+
   // If it's a string, try to parse it
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     try {
       return JSON.parse(value);
     } catch (error) {
-      console.warn('Failed to parse JSON:', value, error);
+      console.warn("Failed to parse JSON:", value, error);
       return fallback;
     }
   }
-  
+
   return fallback;
 };
 
@@ -36,7 +36,7 @@ export const useStudent = (studentId: string): UseStudentReturn => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchStudent = async () => {
+  const fetchStudent = useCallback(async () => {
     if (!studentId) {
       setError("Student ID is required");
       setLoading(false);
@@ -54,7 +54,7 @@ export const useStudent = (studentId: string): UseStudentReturn => {
         .single();
 
       if (fetchError) {
-        if (fetchError.code === 'PGRST116') {
+        if (fetchError.code === "PGRST116") {
           // No rows returned
           setStudent(null);
         } else {
@@ -87,11 +87,11 @@ export const useStudent = (studentId: string): UseStudentReturn => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [studentId]);
 
   useEffect(() => {
     fetchStudent();
-  }, [studentId]);
+  }, [fetchStudent]);
 
   return {
     student,

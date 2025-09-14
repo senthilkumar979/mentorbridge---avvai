@@ -95,12 +95,6 @@ export const Testimonials: React.FC<SectionProps> = ({
     ));
   };
 
-  const getCategoryColor = (category: "founder" | "hr") => {
-    return category === "founder"
-      ? "from-blue-500 to-cyan-500"
-      : "from-purple-500 to-pink-500";
-  };
-
   const getCategoryLabel = (category: "founder" | "hr") => {
     return category === "founder" ? "Founder" : "HR Professional";
   };

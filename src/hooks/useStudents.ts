@@ -10,24 +10,24 @@ interface UseStudentsReturn {
 }
 
 // Safe JSON parsing function
-const safeJsonParse = (value: any, fallback: any = null) => {
+const safeJsonParse = (value: unknown, fallback: unknown = null) => {
   if (!value) return fallback;
-  
+
   // If it's already an object/array, return it
-  if (typeof value === 'object') {
+  if (typeof value === "object") {
     return value;
   }
-  
+
   // If it's a string, try to parse it
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     try {
       return JSON.parse(value);
     } catch (error) {
-      console.warn('Failed to parse JSON:', value, error);
+      console.warn("Failed to parse JSON:", value, error);
       return fallback;
     }
   }
-  
+
   return fallback;
 };
 
@@ -51,8 +51,8 @@ export const useStudents = (): UseStudentsReturn => {
       }
 
       if (data) {
-        console.log('Raw data from Supabase:', data[0]); // Debug log
-        
+        console.log("Raw data from Supabase:", data[0]); // Debug log
+
         // Transform the data to match ProfileData interface
         const transformedData: ProfileData[] = data.map((student) => ({
           id: student.id,

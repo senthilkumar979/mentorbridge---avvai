@@ -183,7 +183,7 @@ export const ProductsSection: React.FC<SectionProps> = ({
             From Learning to Innovation
           </h3>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Our project-based learning approach ensures students don't just
+            Our project-based learning approach ensures students don&apos;t just
             learn theory— they build real products that solve actual problems
             and serve real users.
           </p>

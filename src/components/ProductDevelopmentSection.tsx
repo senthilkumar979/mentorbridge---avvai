@@ -11,13 +11,6 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % pictures.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const pictures = [
     "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/1.png",
     "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/2.png",
@@ -25,6 +18,13 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
     "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/4.png",
     "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/5.png",
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % pictures.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [pictures.length]);
 
   return (
     <section id={id} className={`py-20 sm:py-24 bg-gray-50 ${className}`}>
