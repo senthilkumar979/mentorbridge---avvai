@@ -27,53 +27,48 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
   ];
 
   return (
-    <section
-      id={id}
-      className={`py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white ${className}`}
-    >
+    <section id={id} className={`py-20 sm:py-24 bg-gray-50 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
-            Product Development Center
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
+            Development Center
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Where Ideas Transform Into Innovations
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+            Where Innovation Meets Education
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            In the founded year 2024, MentorBridge took a significant step
-            towards preparing students for the real world by launching Product
-            Development Center at SSMIET. This initiative is more than just a
-            training program; it&apos;s a community where learners become
-            leaders.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Our Product Development Center at SSMIET represents the convergence
+            of academic excellence and industry practice, where students
+            transform theoretical knowledge into real-world solutions.
           </p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Left Column - Story */}
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Our Journey at SSMIET
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Our Partnership with SSMIET
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                With the support of the{" "}
+                Established in 2024, our collaboration with{" "}
                 <Link
                   href="https://ssmiet.ac.in/"
-                  className="text-primary"
+                  className="text-gray-900 font-medium underline hover:text-gray-700 transition-colors duration-300"
                   target="_blank"
                 >
-                  <b>SSM Institute of Engineering and Technology (SSMIET)</b>
+                  SSM Institute of Engineering and Technology (SSMIET)
                 </Link>{" "}
-                placement team, dedicated faculties, and the visionary
-                leadership of the Principal, MentorBridge has trained students
-                in cutting-edge technologies—completely free of cost.
+                has created a unique ecosystem where students receive
+                comprehensive training in modern technologies at no cost.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                These students have successfully developed enterprise-grade
-                applications using modern tools by following Agile methodology.
+                Through this partnership, students develop enterprise-grade
+                applications using industry-standard tools and Agile
+                methodologies, preparing them for immediate professional impact.
               </p>
             </div>
           </div>
@@ -83,7 +78,7 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
               <div>
                 <div
                   key={currentIndex}
-                  className="transition-transform duration-500 ease-in-out transform hover:scale-110 border-2 border-gray-200 rounded-lg overflow-hidden"
+                  className="transition-transform duration-500 ease-in-out transform hover:scale-105 border border-gray-200 rounded-2xl overflow-hidden shadow-lg"
                 >
                   <Image
                     src={pictures[currentIndex]}
@@ -98,45 +93,96 @@ export const ProductDevelopmentSection: React.FC<SectionProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
-          <div className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] rounded-xl p-4 text-white text-center">
-            <div className="text-2xl font-bold mb-1">Development Center</div>
-            <div className="text-sm opacity-90">Corporate Work Environment</div>
+        {/* Key Features */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-20">
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Corporate Environment
+            </h3>
+            <p className="text-gray-600">
+              Professional workspace that mirrors industry standards
+            </p>
           </div>
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-4 text-white text-center">
-            <div className="text-2xl font-bold mb-1">Enterprise Apps</div>
-            <div className="text-sm opacity-90">Real-world projects</div>
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Enterprise Applications
+            </h3>
+            <p className="text-gray-600">
+              Real-world projects with practical business impact
+            </p>
           </div>
         </div>
 
-        {/* Training Phases */}
-        <div className="mb-16">
+        {/* Training Overview */}
+        <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Training Program Phases
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Comprehensive Training Program
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore the phases of our training program through this
-              interactive carousel.
+              Our structured approach ensures students develop both technical
+              expertise and professional competencies through hands-on project
+              experience.
             </p>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] rounded-3xl p-8 sm:p-12 text-white text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-            Visit Our Product Development Center
+        <div className="bg-gray-900 rounded-3xl p-8 sm:p-12 text-center">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Experience Our Development Center
           </h3>
-          <p className="text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
-            Visit our Product Development Center where learners become leaders,
-            and ideas transform into innovations. Witness the power of
-            collaboration and innovation.
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Visit our Product Development Center to witness how we transform
+            students into industry-ready professionals through practical
+            learning.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#d53f8c] font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Visit us
-            </button>
-          </div>
+          <button className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-gray-100 inline-flex items-center">
+            Schedule a Visit
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

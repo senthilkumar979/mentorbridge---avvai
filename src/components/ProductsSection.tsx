@@ -2,271 +2,259 @@ import React from "react";
 import Image from "next/image";
 import { SectionProps } from "@/types";
 
+interface Product {
+  id: string;
+  name: string;
+  logo: string;
+  description: string;
+  website: string;
+  features: string[];
+  category: string;
+  impact: string;
+}
+
 export const ProductsSection: React.FC<SectionProps> = ({
   className = "",
   id = "products",
 }) => {
-  const products = [
+  const products: Product[] = [
     {
       id: "securosphere",
       name: "SecuroSphere",
       logo: "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/securosphere-epORkcNMVS6f7iaVAUkYt8mFW1kp3L.png",
       description:
-        "All-in-one web authentication solution, combining power, flexibility, and intelligence to make your security journey a whole lot easier",
+        "Enterprise-grade web authentication solution providing comprehensive security infrastructure for modern applications.",
       website: "https://www.securosphere.in/",
       features: [
-        "Multi-factor authentication",
-        "Single sign-on (SSO)",
-        "Role-based access control",
-        "Real-time security monitoring",
-        "Compliance reporting",
+        "Multi-Factor Authentication",
+        "Single Sign-On Integration",
+        "Role-Based Access Control",
+        "Real-Time Security Monitoring",
       ],
-      category: "Security Solution",
-      color: "from-blue-500 to-cyan-500",
+      category: "Security Platform",
+      impact: "Securing 10,000+ user sessions daily",
     },
     {
       id: "stublab",
       name: "StubLab",
       logo: "https://www.stublab.in/static/media/stublab-logo.4487178ca0ee981e1d5bde82b1b38feb.svg",
       description:
-        "Ultimate API Mocking tool enabling rapid and flexible API testing with AI-driven dynamic model responses. Test Faster, Smarter.",
+        "AI-powered API testing platform that accelerates development workflows with intelligent mock generation and testing automation.",
       website: "https://www.stublab.in/",
       features: [
-        "AI-powered mock generation",
-        "Dynamic response models",
-        "Real-time API testing",
-        "Collaborative workspace",
-        "Version control integration",
+        "AI-Powered Mock Generation",
+        "Dynamic Response Modeling",
+        "Collaborative Testing Environment",
+        "Version Control Integration",
       ],
-      category: "API Testing",
-      color: "from-green-500 to-emerald-500",
+      category: "Developer Tools",
+      impact: "Used by 500+ development teams",
     },
     {
       id: "stupro",
       name: "StuPro",
       logo: "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/logo-alone.png",
       description:
-        "From Student to Professional. A career wingman, making sure you never miss an opportunity to learn, practice, and grow.",
+        "Comprehensive career development platform connecting students with industry opportunities and personalized growth paths.",
       website: "https://www.stupro.info/",
       features: [
-        "Career path guidance",
-        "Skill assessment tools",
-        "Learning track recommendations",
-        "Industry insights",
-        "Mentorship matching",
+        "Career Path Guidance",
+        "Skill Assessment & Tracking",
+        "Industry Mentorship Matching",
+        "Job Opportunity Curation",
       ],
       category: "Career Platform",
-      color: "from-purple-500 to-pink-500",
+      impact: "Helped 1,000+ students find careers",
     },
   ];
 
   return (
-    <section
-      id={id}
-      className={`py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white ${className}`}
-    >
+    <section id={id} className={`py-20 sm:py-24 bg-white ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
-            Student Innovations
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
+            Student Innovation
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Proud Products
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+            Real-World Impact
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover the innovative solutions developed by our talented
-            students. These products showcase the real-world impact of our
-            training program and the creativity of our learners.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Discover the innovative solutions developed by our students during
+            their training. These live products demonstrate the practical skills
+            and entrepreneurial mindset we cultivate.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
-            >
-              {/* Gradient border on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px]">
-                <div
-                  className={`bg-gradient-to-r ${product.color} rounded-2xl h-full w-full`}
-                ></div>
-              </div>
-
-              <div className="relative z-10 bg-white rounded-2xl p-6">
-                {/* Header */}
-                <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
-                  <div className="mb-4 sm:mb-0 sm:mr-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          {products.map((product) => (
+            <div key={product.id} className="group relative">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-gray-300 hover:shadow-lg">
+                {/* Logo & Category */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-16 h-16 relative">
                     <Image
                       src={product.logo}
                       alt={`${product.name} logo`}
                       width={64}
                       height={64}
-                      className="h-16 w-auto max-w-full object-contain"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="flex-1 text-center sm:text-left">
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-accessible transition-colors duration-300">
-                      {product.name}
-                    </h2>
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-700 mb-2">
-                      {product.category}
-                    </div>
+                  <div className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
+                    {product.category}
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-sm font-bold mb-6 text-gray-600 leading-relaxed group-hover:text-[#d53f8c] transition-colors duration-300">
+                {/* Product Info */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {product.name}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {product.description}
                 </p>
 
                 {/* Features */}
-                <div className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6">
                   {product.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start">
-                      <div
-                        className={`w-2 h-2 bg-gradient-to-r ${product.color} rounded-full mt-2 mr-3 flex-shrink-0`}
-                      ></div>
-                      <span className="text-xs sm:text-sm text-gray-600">
-                        {feature}
-                      </span>
-                    </div>
+                    <li key={featureIndex} className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </li>
                   ))}
+                </ul>
+
+                {/* Impact */}
+                <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                  <div className="text-sm font-medium text-gray-900 mb-1">
+                    Impact
+                  </div>
+                  <div className="text-sm text-gray-600">{product.impact}</div>
                 </div>
 
-                {/* Visit Website Button */}
-                <div className="flex space-y-8">
-                  <a
-                    href={`/product-detail/${product.id}`}
-                    className={`inline-flex items-center justify-center w-full bg-gray-200 text-gray-900 font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group-hover:shadow-2xl`}
-                    aria-label={`Learn more about ${product.name}`}
+                {/* CTA */}
+                <a
+                  href={`/product-detail/${product.id}`}
+                  className="inline-flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300"
+                >
+                  View Details
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span className="mr-2">
-                      Learn more
-                    </span>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 12h14M12 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         {/* Success Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-3xl font-bold text-[#d53f8c] mb-2">3</div>
-            <div className="text-lg font-semibold text-gray-900 mb-1">
-              Products Developed
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-20">
+          <div className="text-center p-8 bg-gray-50 rounded-2xl">
+            <div className="text-4xl font-bold text-gray-900 mb-2">3</div>
+            <div className="text-lg font-medium text-gray-900 mb-2">
+              Live Products
             </div>
-            <div className="text-sm text-gray-600">
-              Real-world solutions created by students
-            </div>
+            <div className="text-gray-600">Developed by students</div>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-3xl font-bold text-[#d53f8c] mb-2">100%</div>
-            <div className="text-lg font-semibold text-gray-900 mb-1">
-              Student-Driven
+          <div className="text-center p-8 bg-gray-50 rounded-2xl">
+            <div className="text-4xl font-bold text-gray-900 mb-2">100%</div>
+            <div className="text-lg font-medium text-gray-900 mb-2">
+              Student-Built
             </div>
-            <div className="text-sm text-gray-600">
-              From concept to deployment by learners
-            </div>
-          </div>
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-3xl font-bold text-[#d53f8c] mb-2">Live</div>
-            <div className="text-lg font-semibold text-gray-900 mb-1">
-              Production Ready
-            </div>
-            <div className="text-sm text-gray-600">
-              Deployed and accessible to users worldwide
-            </div>
+            <div className="text-gray-600">From concept to deployment</div>
           </div>
         </div>
 
-        {/* Innovation Story */}
-        <div className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] rounded-3xl p-8 sm:p-12 text-white">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-                From Learning to Innovation
-              </h3>
-              <p className="text-lg leading-relaxed mb-6">
-                Our training program doesn&apos;t just teach skills—it empowers
-                students to create real-world solutions. These products
-                demonstrate the practical application of modern technologies and
-                the entrepreneurial spirit we foster.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
-                    <div className="w-2 h-2 bg-[#d53f8c] rounded-full"></div>
-                  </div>
-                  <span>Real-world problem solving</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
-                    <div className="w-2 h-2 bg-[#d53f8c] rounded-full"></div>
-                  </div>
-                  <span>Industry-standard development practices</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
-                    <div className="w-2 h-2 bg-[#d53f8c] rounded-full"></div>
-                  </div>
-                  <span>User-centered design and development</span>
-                </div>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-                <div className="text-4xl font-bold mb-2">🎯</div>
-                <div className="text-lg">Innovation Hub</div>
-                <div className="text-sm opacity-90 mt-2">
-                  Where ideas become reality
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Ready to Build Your Own Product?
+        {/* Innovation Process */}
+        <div className="bg-gray-900 rounded-3xl p-8 sm:p-12 text-center">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            From Learning to Innovation
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join our training program and turn your ideas into innovative
-            solutions. Learn the skills needed to create products that make a
-            real impact.
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Our project-based learning approach ensures students don't just
+            learn theory— they build real products that solve actual problems
+            and serve real users.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => {
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Start Building
-            </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex items-center text-gray-300">
+              <svg
+                className="w-5 h-5 text-green-400 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Real Problem Solving
+            </div>
+            <div className="flex items-center text-gray-300">
+              <svg
+                className="w-5 h-5 text-green-400 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Production Deployment
+            </div>
+            <div className="flex items-center text-gray-300">
+              <svg
+                className="w-5 h-5 text-green-400 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              User Impact
+            </div>
           </div>
+          <button
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-gray-100 inline-flex items-center"
+          >
+            Start Building Your Product
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

@@ -1,16 +1,15 @@
 "use client";
 
-import React from "react";
 import {
-  Header,
-  HeroSection,
-  WhatWeDoSection,
-  KeyFeaturesSection,
-  ProductDevelopmentSection,
   AchievementsSection,
-  ProductsSection,
   ContactSection,
   Footer,
+  Header,
+  HeroSection,
+  KeyFeaturesSection,
+  ProductDevelopmentSection,
+  ProductsSection,
+  WhatWeDoSection,
 } from "@/components";
 
 export default function LandingPage() {
@@ -23,6 +22,7 @@ export default function LandingPage() {
       <ProductDevelopmentSection />
       <AchievementsSection />
       <ProductsSection id="products" />
+      {/* <Testimonials id="testimonials" /> */}
       <ContactSection id="contact" />
       <Footer />
     </div>

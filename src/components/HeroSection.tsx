@@ -1,5 +1,5 @@
-import React from "react";
 import { SectionProps } from "@/types";
+import React from "react";
 
 export const HeroSection: React.FC<SectionProps> = ({
   className = "",
@@ -8,71 +8,102 @@ export const HeroSection: React.FC<SectionProps> = ({
   return (
     <section
       id={id}
-      className={`pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 relative overflow-hidden ${className}`}
-      style={{
-        background: "linear-gradient(220deg, #e53e8c -20%, #f5b5cd 100%)",
-      }}
+      className={`pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-br from-stone-100 via-from-[#d53f8c] to-slate-900 ${className}`}
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-pulse animation-delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse animation-delay-2000"></div>
-
-        {/* Gradient orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Main Content */}
           <div className="text-center lg:text-left space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm font-medium">
-              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-              Not-For-Profit Community
+            {/* Professional Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></div>
+              Industry-Focused Training Program
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-                <span className="block">
-                  Mentor
-                  <span className="bg-gradient-to-r from-white to-pink-200 bg-clip-text text-transparent">
-                    Bridge
-                  </span>
+            <div className="space-y-6">
+              <h6 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white tracking-tight">
+                <span className="block">Transform Your</span>
+              </h6>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white tracking-tight">
+                <span className="block bg-gradient-to-r from-[#d53f8c] to-[#b83280] bg-clip-text text-transparent">
+                  Career Path
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-medium">
-                Guiding Your Journey to Success
+              <p className="text-xl sm:text-2xl text-white/90 font-medium max-w-2xl mx-auto lg:mx-0">
+                Professional training that bridges the gap between education and
+                industry success
               </p>
             </div>
 
-            {/* Quote */}
-            <blockquote className="relative p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg">
-              <div className="absolute -top-3 left-6 text-3xl sm:text-4xl text-white/60">
-                &ldquo;
-              </div>
-              <p className="text-base sm:text-lg text-white/90 italic leading-relaxed">
-                Education is the passport to the future, for tomorrow belongs to
-                those who prepare for it today.
+            {/* Value Proposition */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <p className="text-lg text-white/90 leading-relaxed">
+                Join{" "}
+                <span className="font-semibold text-emerald-400">
+                  100+ graduates
+                </span>{" "}
+                who have successfully transitioned from students to industry
+                professionals through our comprehensive training program.
               </p>
-              <footer className="text-sm text-white/70 mt-3">
-                – Malcolm X
-              </footer>
-            </blockquote>
+            </div>
 
-            {/* Description */}
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              MentorBridge is more than just a mentorship platform – it&apos;s a
-              community of learners, leaders, and future innovators. By joining
-              MentorBridge, you become part of a supportive network that
-              encourages growth, learning, and connection.
-            </p>
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/70">
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 text-emerald-400 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                No Cost Training
+              </div>
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 text-emerald-400 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Industry Mentors
+              </div>
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 text-emerald-400 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Student to Professional
+              </div>
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -83,50 +114,45 @@ export const HeroSection: React.FC<SectionProps> = ({
                     contactSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="group relative bg-white text-[#d53f8c] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="group bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:from-emerald-600 hover:to-blue-600 inline-flex items-center"
               >
-                <span className="relative z-10">Hire our Students</span>
-                <div className="absolute inset-0 bg-gray-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span>Start Your Journey</span>
+                <svg
+                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => {
+                  const whatWeDoSection = document.getElementById("what-we-do");
+                  if (whatWeDoSection) {
+                    whatWeDoSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-xl border border-white/20 transition-all duration-300 hover:bg-white/20 hover:border-white/30"
+              >
+                Learn More
               </button>
             </div>
           </div>
 
-          {/* Right Column - Stats and Features */}
+          {/* Right Column - Professional Stats & Social Proof */}
           <div className="space-y-8">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-              <div className="text-center p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
-                  100+
-                </div>
-                <div className="text-sm sm:text-base text-white/80 font-medium">
-                  Students Trained
-                </div>
-              </div>
-              <div className="text-center p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
-                  3
-                </div>
-                <div className="text-sm sm:text-base text-white/80 font-medium">
-                  Products Developed
-                </div>
-              </div>
-              <div className="text-center p-4 sm:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
-                  10+
-                </div>
-                <div className="text-sm sm:text-base text-white/80 font-medium">
-                  Months of Training
-                </div>
-              </div>
-            </div>
-
-            {/* Feature Cards */}
+            {/* Professional Benefits */}
             <div className="space-y-4">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
+              <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 text-emerald-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -139,20 +165,21 @@ export const HeroSection: React.FC<SectionProps> = ({
                     />
                   </svg>
                 </div>
-                <div className="text-center sm:text-left">
-                  <h2 className="text-lg font-semibold text-white">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
                     Industry-Ready Skills
-                  </h2>
-                  <p className="text-sm text-white/80">
-                    Latest technologies and real-world projects
+                  </h3>
+                  <p className="text-sm text-white/70">
+                    Master modern technologies and real-world development
+                    practices
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-start p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
+              <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 text-blue-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -165,20 +192,20 @@ export const HeroSection: React.FC<SectionProps> = ({
                     />
                   </svg>
                 </div>
-                <div className="text-center sm:text-left">
-                  <h2 className="text-lg font-semibold text-white">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
                     Expert Mentorship
-                  </h2>
-                  <p className="text-sm text-white/80">
-                    Guidance from experienced professionals
+                  </h3>
+                  <p className="text-sm text-white/70">
+                    Learn from experienced professionals and industry leaders
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-start p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 sm:mb-0 sm:mr-4">
+              <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 text-purple-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -191,15 +218,33 @@ export const HeroSection: React.FC<SectionProps> = ({
                     />
                   </svg>
                 </div>
-                <div className="text-center sm:text-left">
-                  <h2 className="text-lg font-semibold text-white">
-                    No Cost Training
-                  </h2>
-                  <p className="text-sm text-white/80">
-                    Training at no cost to all the students
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    Career Placement
+                  </h3>
+                  <p className="text-sm text-white/70">
+                    Direct connections to hiring partners and job opportunities
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Social Proof */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="flex items-center justify-center mb-4">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 bg-emerald-500 rounded-full border-2 border-white/20"></div>
+                  <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white/20"></div>
+                  <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white/20"></div>
+                  <div className="w-8 h-8 bg-pink-500 rounded-full border-2 border-white/20"></div>
+                </div>
+              </div>
+              <p className="text-center text-sm text-white/70">
+                <span className="font-semibold text-white">
+                  Join 100+ students
+                </span>{" "}
+                already transforming their careers
+              </p>
             </div>
           </div>
         </div>

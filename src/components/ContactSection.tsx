@@ -33,12 +33,27 @@ export const ContactSection: React.FC<SectionProps> = ({
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        console.error("Form submission error:", errorData);
+        setSubmitStatus("error");
+        // Log detailed error for debugging
+        console.error("Error details:", errorData.details || errorData.error);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -67,24 +82,21 @@ export const ContactSection: React.FC<SectionProps> = ({
   ];
 
   return (
-    <section
-      id={id}
-      className={`py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white ${className}`}
-    >
+    <section id={id} className={`py-20 sm:py-24 bg-white ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
             Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Contact MentorBridge
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+            Start Your Journey
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Ready to start your journey with us? Get in touch with our team for
-            any questions about our training programs or mentorship
-            opportunities.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Ready to transform your career? Connect with our team to learn more
+            about our training programs and how we can help you achieve your
+            goals.
           </p>
         </div>
 
@@ -93,12 +105,12 @@ export const ContactSection: React.FC<SectionProps> = ({
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                Let&apos;s Connect
+                Contact Information
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                We&apos;re here to help you succeed. Reach out to us through any
-                of the following channels, and we&apos;ll get back to you as
-                soon as possible.
+                Reach out to us through any of the following channels.
+                We&apos;re here to answer your questions and guide you through
+                the next steps.
               </p>
             </div>
 
@@ -107,18 +119,20 @@ export const ContactSection: React.FC<SectionProps> = ({
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="text-3xl">{info.icon}</div>
+                    <div className="text-2xl">{info.icon}</div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {info.title}
                       </h3>
-                      <p className="text-lg text-[#d53f8c] font-semibold mb-2">
+                      <p className="text-gray-900 font-medium mb-2">
                         {info.details}
                       </p>
-                      <p className="text-gray-600">{info.description}</p>
+                      <p className="text-gray-600 text-sm">
+                        {info.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -127,9 +141,9 @@ export const ContactSection: React.FC<SectionProps> = ({
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 sm:p-10">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
             <div className="mb-8">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Send us a Message
               </h3>
               <p className="text-gray-600">
@@ -143,7 +157,7 @@ export const ContactSection: React.FC<SectionProps> = ({
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Full Name *
                 </label>
@@ -154,7 +168,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-white"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -163,7 +177,7 @@ export const ContactSection: React.FC<SectionProps> = ({
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Email Address *
                 </label>
@@ -174,7 +188,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-white"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -183,7 +197,7 @@ export const ContactSection: React.FC<SectionProps> = ({
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Message *
                 </label>
@@ -194,7 +208,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#d53f8c]/20 focus:border-[#d53f8c] hover:border-gray-300 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 text-gray-900 placeholder-gray-400 bg-white resize-none"
                   placeholder="Tell us about your inquiry or how we can help you..."
                 />
               </div>
@@ -203,7 +217,7 @@ export const ContactSection: React.FC<SectionProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#d53f8c] to-[#b83280] text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gray-900 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
@@ -247,7 +261,7 @@ export const ContactSection: React.FC<SectionProps> = ({
                 By submitting this form, you agree to our{" "}
                 <a
                   href="/privacy-policy"
-                  className="text-primary-accessible font-semibold underline hover:text-primary-accessible-darker transition-colors duration-300"
+                  className="text-gray-900 font-medium underline hover:text-gray-700 transition-colors duration-300"
                 >
                   privacy policy
                 </a>

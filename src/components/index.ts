@@ -8,3 +8,4 @@ export { MentorsSection } from "./MentorsSection";
 export { ContactSection } from "./ContactSection";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
+export { Testimonials } from "./Testimonials";

@@ -1,18 +1,27 @@
 import React from "react";
 import { SectionProps } from "@/types";
 
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  features: string[];
+}
+
 export const WhatWeDoSection: React.FC<SectionProps> = ({
   className = "",
   id = "what-we-do",
 }) => {
-  const services = [
+  const services: Service[] = [
     {
-      title: "Skill Development",
+      id: "technical-development",
+      title: "Technical Development",
       description:
-        "We offer hands-on training in the latest technologies and tools, ensuring students acquire skills that are directly applicable to current industry demands.",
+        "Comprehensive technical training in modern technologies, frameworks, and industry-standard development practices.",
       icon: (
         <svg
-          className="w-8 h-8"
+          className="w-6 h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -20,206 +29,200 @@ export const WhatWeDoSection: React.FC<SectionProps> = ({
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-      ),
-      features: [
-        "Latest & Trending technologies ",
-        "Real-world project experience",
-        "Industry-standard tools and practices",
-        "Hands-on coding sessions daily",
-      ],
-    },
-    {
-      title: "Industry Readiness",
-      description:
-        "Our focus is on practical knowledge and real-world applications, preparing students to confidently step into professional roles upon graduation.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-          />
-        </svg>
-      ),
-      features: [
-        "Agile methodology implementation",
-        "Team collaboration and communication",
-        "Code review and quality assurance",
-        "Professional development workflow",
-      ],
-    },
-    {
-      title: "Holistic Growth",
-      description:
-        "Beyond technical expertise, we emphasize the development of soft skills such as effective communication and problem-solving abilities, which are crucial for long-term career success.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
-      ),
-      features: [
-        "Communication skills enhancement",
-        "Problem-solving methodologies",
-        "Leadership and teamwork",
-        "Professional networking",
-      ],
-    },
-    {
-      title: "Project-Based Learning",
-      description:
-        "Learners will engage in real-world projects, enhancing their practical experience and understanding of industry standards and best practices.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-          />
-        </svg>
-      ),
-      features: [
-        "Enterprise-grade application development",
-        "Full-stack development experience",
-        "Deployment and DevOps practices",
-        "Product lifecycle management",
-      ],
-    },
-    {
-      title: "Career Preparation",
-      description:
-        "Comprehensive preparation for final year engineering students to secure job opportunities in the IT industry.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-          />
-        </svg>
-      ),
-      features: [
-        "Resume building and optimization",
-        "Mock interview preparation",
-        "Profile enhancement",
-        "Job search strategies",
-      ],
-    },
-    {
-      title: "Technical Excellence",
-      description:
-        "Advanced technical training covering modern frameworks, cloud technologies, and industry best practices.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={1.5}
             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
           />
         </svg>
       ),
       features: [
-        "AWS cloud computing",
-        "Docker containerization",
-        "CI/CD pipeline implementation",
-        "Code quality analysis with SonarQube",
+        "Modern JavaScript & TypeScript",
+        "React, Node.js & Full-Stack Development",
+        "Cloud Computing & DevOps",
+        "Database Design & Management",
+      ],
+    },
+    {
+      id: "professional-skills",
+      title: "Professional Skills",
+      description:
+        "Essential workplace competencies including project management, team collaboration, and agile methodologies.",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      ),
+      features: [
+        "Agile & Scrum Methodologies",
+        "Project Management",
+        "Code Review & Quality Assurance",
+        "Team Leadership & Communication",
+      ],
+    },
+    {
+      id: "career-readiness",
+      title: "Career Readiness",
+      description:
+        "Strategic career preparation including portfolio development, interview skills, and industry networking.",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
+          />
+        </svg>
+      ),
+      features: [
+        "Portfolio Development",
+        "Technical Interview Preparation",
+        "Resume & LinkedIn Optimization",
+        "Industry Networking",
+      ],
+    },
+    {
+      id: "practical-experience",
+      title: "Practical Experience",
+      description:
+        "Real-world project development with enterprise-grade applications and deployment practices.",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+          />
+        </svg>
+      ),
+      features: [
+        "Enterprise Application Development",
+        "Production Deployment",
+        "Performance Optimization",
+        "Security Best Practices",
+      ],
+    },
+    {
+      id: "mentorship-support",
+      title: "Mentorship & Support",
+      description:
+        "Personalized guidance from industry professionals with continuous learning and development support.",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+          />
+        </svg>
+      ),
+      features: [
+        "One-on-One Mentoring",
+        "Industry Expert Sessions",
+        "Peer Learning Groups",
+        "24/7 Community Support",
+      ],
+    },
+    {
+      id: "industry-integration",
+      title: "Industry Integration",
+      description:
+        "Direct connections with hiring partners and exposure to real industry challenges and opportunities.",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
+      features: [
+        "Company Partnerships",
+        "Live Project Opportunities",
+        "Guest Expert Sessions",
+        "Job Placement Assistance",
       ],
     },
   ];
 
   return (
-    <section
-      id={id}
-      className={`py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white ${className}`}
-    >
+    <section id={id} className={`py-20 sm:py-24 bg-white ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
-            Our Services
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-gray-400 rounded-full mr-2"></div>
+            Our Approach
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What We Do
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+            Comprehensive Professional Development
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We offer hands-on training in the latest technologies and tools,
-            ensuring students acquire skills that are directly applicable to
-            current industry demands. Our focus is on practical knowledge and
-            real-world applications, preparing students to confidently step into
-            professional roles upon graduation.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We provide end-to-end training that transforms students into
+            industry-ready professionals through structured learning, practical
+            experience, and strategic career development.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
-            >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-              <div className="relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service) => (
+            <div key={service.id} className="group relative">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-gray-300 hover:shadow-lg">
                 {/* Icon */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[#d53f8c] to-[#b83280] rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-white">{service.icon}</div>
+                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
+                  <div className="text-gray-600 group-hover:text-white transition-colors duration-300">
+                    {service.icon}
+                  </div>
                 </div>
 
                 {/* Content */}
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-[#d53f8c] transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {service.title}
-                </h2>
-                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Features List */}
-                <ul className="space-y-2 sm:space-y-3">
+                <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <div className="w-2 h-2 bg-[#d53f8c] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-xs sm:text-sm text-gray-600">
-                        {feature}
-                      </span>
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-sm text-gray-600">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -228,29 +231,39 @@ export const WhatWeDoSection: React.FC<SectionProps> = ({
           ))}
         </div>
 
-        {/* Additional Info Section */}
-        <div className="bg-gradient-to-r from-[#d53f8c] to-[#b83280] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white">
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
-                Specialized for Engineering Students
-              </h3>
-              <p className="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Our program is specifically designed to bridge the gap between
-                academic learning and industry requirements, ensuring students
-                are job-ready from day one.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
-                <div className="text-3xl sm:text-4xl font-bold mb-2">100%</div>
-                <div className="text-base sm:text-lg">Job Ready</div>
-                <div className="text-xs sm:text-sm opacity-90 mt-2">
-                  Industry-focused training with real-world projects
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* CTA Section */}
+        <div className="bg-gray-900 rounded-3xl p-8 sm:p-12 text-center">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Ready to Start Your Professional Journey?
+          </h3>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join our comprehensive training program and transform your career
+            prospects with industry-relevant skills and professional guidance.
+          </p>
+          <button
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-gray-100 inline-flex items-center"
+          >
+            Apply Now
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
