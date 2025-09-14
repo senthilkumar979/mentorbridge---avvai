@@ -62,25 +62,13 @@ const mod = __turbopack_context__.x("next/dist/server/app-render/after-task-asyn
 module.exports = mod;
 }}),
 "[project]/src/app/api/test/route.ts [app-route] (ecmascript)": ((__turbopack_context__) => {
-"use strict";
 
-__turbopack_context__.s({
-    "GET": ()=>GET,
-    "POST": ()=>POST
-});
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
-;
-async function GET() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        message: "API is working!"
-    });
-}
-async function POST() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        message: "POST API is working!"
-    });
-}
-}),
+var { m: module, e: exports } = __turbopack_context__;
+{
+const e = new Error("Could not parse module '[project]/src/app/api/test/route.ts'");
+e.code = 'MODULE_UNPARSABLE';
+throw e;
+}}),
 
 };
 

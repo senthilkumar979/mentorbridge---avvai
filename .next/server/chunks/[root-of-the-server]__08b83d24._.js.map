@@ -2,6 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 66, "column": 0}, "map": {"version":3,"sources":["file:///Users/senthilkumarthangavel/projects/MB-Main/src/app/api/test/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  return NextResponse.json({ message: \"API is working!\" });\n}\n\nexport async function POST() {\n  return NextResponse.json({ message: \"POST API is working!\" });\n}\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe;IACpB,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE,SAAS;IAAkB;AACxD;AAEO,eAAe;IACpB,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE,SAAS;IAAuB;AAC7D","debugId":null}}]
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}}]
 }

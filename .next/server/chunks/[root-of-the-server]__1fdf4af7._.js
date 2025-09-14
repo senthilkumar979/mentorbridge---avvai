@@ -106,7 +106,7 @@ async function POST(request) {
         const { data, error } = await resend.emails.send({
             from: "MentorBridge Contact <onboarding@resend.dev>",
             to: [
-                "senthilkumar@mentorbridge.in"
+                "mentorbridgeindia@gmail.com"
             ],
             subject: `New Contact Form Submission from ${name}`,
             html: `

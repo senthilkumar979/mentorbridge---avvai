@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: "MentorBridge Contact <onboarding@resend.dev>",
-      to: ["senthilkumar@mentorbridge.in"],
+      to: ["mentorbridgeindia@gmail.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
