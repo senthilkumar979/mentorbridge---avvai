@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ProfilesList } from "../data/students-2025";
 import { ProfileData } from "../../types/Profile.types";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
 import Link from "next/link";
+import { useStudents } from "../../hooks/useStudents";
 
 export default function StudentsPage() {
   const router = useRouter();
@@ -15,30 +14,31 @@ export default function StudentsPage() {
   const [selectedCompany, setSelectedCompany] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
 
+  // Fetch students data from Supabase
+  const { students, loading, error, refetch } = useStudents();
+
   // Get unique values for filters
   const uniqueRoles = useMemo(
-    () => [...new Set(ProfilesList.map((profile) => profile.role))].sort(),
-    []
+    () => [...new Set(students.map((profile) => profile.role))].sort(),
+    [students]
   );
 
   const uniqueCompanies = useMemo(
     () =>
       [
-        ...new Set(
-          ProfilesList.map((profile) => profile.company).filter(Boolean)
-        ),
+        ...new Set(students.map((profile) => profile.company).filter(Boolean)),
       ].sort(),
-    []
+    [students]
   );
 
   const uniqueBatches = useMemo(
-    () => [...new Set(ProfilesList.map((profile) => profile.batch))].sort(),
-    []
+    () => [...new Set(students.map((profile) => profile.batch))].sort(),
+    [students]
   );
 
   // Filter profiles based on search and filters
   const filteredProfiles = useMemo(() => {
-    return ProfilesList.filter((profile) => {
+    return students.filter((profile) => {
       const matchesSearch = profile.name
         .toLowerCase()
         .includes(searchTerm.toLowerCase());
@@ -49,7 +49,7 @@ export default function StudentsPage() {
 
       return matchesSearch && matchesRole && matchesCompany && matchesBatch;
     });
-  }, [searchTerm, selectedRole, selectedCompany, selectedBatch]);
+  }, [students, searchTerm, selectedRole, selectedCompany, selectedBatch]);
 
   const clearFilters = () => {
     setSearchTerm("");
@@ -96,149 +96,189 @@ export default function StudentsPage() {
           </div>
 
           {/* Filters */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-12 border border-white/20 animate-slide-up">
-            <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Search */}
-              <div className="lg:col-span-1">
-                <label
-                  htmlFor="search"
-                  className="block text-sm font-semibold text-slate-700 mb-3"
-                >
-                  Search by Name
-                </label>
-                <input
-                  type="text"
-                  id="search"
-                  placeholder="Search students..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
-                />
-              </div>
-
-              {/* Role Filter */}
-              <div>
-                <label
-                  htmlFor="role"
-                  className="block text-sm font-semibold text-slate-700 mb-3"
-                >
-                  Role
-                </label>
-                <select
-                  id="role"
-                  value={selectedRole}
-                  onChange={(e) => setSelectedRole(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm  text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
-                >
-                  <option value="">All Roles</option>
-                  {uniqueRoles.map((role) => (
-                    <option key={role} value={role}>
-                      {role}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Company Filter */}
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-semibold text-slate-700 mb-3"
-                >
-                  Company
-                </label>
-                <select
-                  id="company"
-                  value={selectedCompany}
-                  onChange={(e) => setSelectedCompany(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
-                >
-                  <option value="">All Companies</option>
-                  {uniqueCompanies.map((company) => (
-                    <option key={company} value={company}>
-                      {company}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Batch Filter */}
-              <div>
-                <label
-                  htmlFor="batch"
-                  className="block text-sm font-semibold text-slate-700 mb-3"
-                >
-                  Batch
-                </label>
-                <select
-                  id="batch"
-                  value={selectedBatch}
-                  onChange={(e) => setSelectedBatch(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm  text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-800"
-                >
-                  <option value="">All Batches</option>
-                  {uniqueBatches.map((batch) => (
-                    <option key={batch} value={batch}>
-                      {batch}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Clear Filters Button */}
-            <div className="mt-6 flex justify-end">
-              <button
-                onClick={clearFilters}
-                className="px-6 py-3 text-sm font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-xl hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200 hover:shadow-md"
-              >
-                Clear Filters
-              </button>
-            </div>
-          </div>
-
-          {/* Results Count */}
-          <div className="mb-8 text-center">
-            <p className="text-slate-600 text-lg font-medium">
-              Showing{" "}
-              <span className="text-pink-500 font-bold">
-                {filteredProfiles.length}
-              </span>{" "}
-              of{" "}
-              <span className="text-slate-800 font-bold">
-                {ProfilesList.length}
-              </span>{" "}
-              students
-            </p>
-          </div>
-
-          {/* Students Grid */}
-          {filteredProfiles.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {filteredProfiles.map((profile, index) => (
-                <div
-                  key={profile.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <StudentCard
-                    profile={profile}
-                    onClick={() => router.push(`/student-detail/${profile.id}`)}
+          {!loading && !error && (
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-12 border border-white/20 animate-slide-up">
+              <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Search */}
+                <div className="lg:col-span-1">
+                  <label
+                    htmlFor="search"
+                    className="block text-sm font-semibold text-slate-700 mb-3"
+                  >
+                    Search by Name
+                  </label>
+                  <input
+                    type="text"
+                    id="search"
+                    placeholder="Search students..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
                   />
                 </div>
-              ))}
+
+                {/* Role Filter */}
+                <div>
+                  <label
+                    htmlFor="role"
+                    className="block text-sm font-semibold text-slate-700 mb-3"
+                  >
+                    Role
+                  </label>
+                  <select
+                    id="role"
+                    value={selectedRole}
+                    onChange={(e) => setSelectedRole(e.target.value)}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm  text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
+                  >
+                    <option value="">All Roles</option>
+                    {uniqueRoles.map((role) => (
+                      <option key={role} value={role}>
+                        {role}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Company Filter */}
+                <div>
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-semibold text-slate-700 mb-3"
+                  >
+                    Company
+                  </label>
+                  <select
+                    id="company"
+                    value={selectedCompany}
+                    onChange={(e) => setSelectedCompany(e.target.value)}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-400"
+                  >
+                    <option value="">All Companies</option>
+                    {uniqueCompanies.map((company) => (
+                      <option key={company} value={company}>
+                        {company}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Batch Filter */}
+                <div>
+                  <label
+                    htmlFor="batch"
+                    className="block text-sm font-semibold text-slate-700 mb-3"
+                  >
+                    Batch
+                  </label>
+                  <select
+                    id="batch"
+                    value={selectedBatch}
+                    onChange={(e) => setSelectedBatch(e.target.value)}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm  text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-slate-300 placeholder:text-slate-800"
+                  >
+                    <option value="">All Batches</option>
+                    {uniqueBatches.map((batch) => (
+                      <option key={batch} value={batch}>
+                        {batch}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Clear Filters Button */}
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={clearFilters}
+                  className="px-6 py-3 text-sm font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-xl hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200 hover:shadow-md"
+                >
+                  Clear Filters
+                </button>
+              </div>
             </div>
-          ) : (
+          )}
+
+          {/* Loading State */}
+          {loading && (
             <div className="text-center py-16 animate-fade-in">
-              <div className="text-slate-300 text-8xl mb-6">🔍</div>
+              <div className="text-slate-300 text-8xl mb-6">⏳</div>
               <h3 className="text-2xl font-semibold text-slate-800 mb-3">
-                No students found
+                Loading students...
               </h3>
               <p className="text-slate-600 text-lg">
-                Try adjusting your search criteria or filters to find more
-                students.
+                Please wait while we fetch the latest student data.
               </p>
             </div>
+          )}
+
+          {/* Error State */}
+          {error && (
+            <div className="text-center py-16 animate-fade-in">
+              <div className="text-red-300 text-8xl mb-6">❌</div>
+              <h3 className="text-2xl font-semibold text-slate-800 mb-3">
+                Error loading students
+              </h3>
+              <p className="text-slate-600 text-lg mb-6">{error}</p>
+              <button
+                onClick={refetch}
+                className="px-6 py-3 bg-pink-500 text-white rounded-xl hover:bg-pink-600 transition-colors duration-200 font-semibold"
+              >
+                Try Again
+              </button>
+            </div>
+          )}
+
+          {/* Results Count */}
+          {!loading && !error && (
+            <div className="mb-8 text-center">
+              <p className="text-slate-600 text-lg font-medium">
+                Showing{" "}
+                <span className="text-pink-500 font-bold">
+                  {filteredProfiles.length}
+                </span>{" "}
+                of{" "}
+                <span className="text-slate-800 font-bold">
+                  {students.length}
+                </span>{" "}
+                students
+              </p>
+            </div>
+          )}
+
+          {/* Students Grid */}
+          {!loading && !error && (
+            <>
+              {filteredProfiles.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                  {filteredProfiles.map((profile, index) => (
+                    <div
+                      key={profile.id}
+                      className="animate-fade-in-up"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <StudentCard
+                        profile={profile}
+                        onClick={() =>
+                          router.push(`/student-detail/${profile.id}`)
+                        }
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-16 animate-fade-in">
+                  <div className="text-slate-300 text-8xl mb-6">🔍</div>
+                  <h3 className="text-2xl font-semibold text-slate-800 mb-3">
+                    No students found
+                  </h3>
+                  <p className="text-slate-600 text-lg">
+                    Try adjusting your search criteria or filters to find more
+                    students.
+                  </p>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

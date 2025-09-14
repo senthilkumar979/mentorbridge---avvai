@@ -1,18 +1,16 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useMemo } from "react";
-import { ProfilesList } from "../../data/students-2025";
 import Image from "next/image";
+import { useStudent } from "../../../hooks/useStudent";
 
 export default function StudentDetailPage() {
   const params = useParams();
   const router = useRouter();
   const studentId = params.id as string;
 
-  const student = useMemo(() => {
-    return ProfilesList.find((profile) => profile.id === studentId);
-  }, [studentId]);
+  // Fetch student data from Supabase
+  const { student, loading, error, refetch } = useStudent(studentId);
 
   const downloadResume = () => {
     if (student) {
@@ -22,6 +20,53 @@ export default function StudentDetailPage() {
     }
   };
 
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-slate-300 text-8xl mb-6">⏳</div>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">
+            Loading Student...
+          </h1>
+          <p className="text-slate-600 mb-8">
+            Please wait while we fetch the student details.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-red-300 text-8xl mb-6">❌</div>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">
+            Error Loading Student
+          </h1>
+          <p className="text-slate-600 mb-8">{error}</p>
+          <div className="space-x-4">
+            <button
+              onClick={refetch}
+              className="px-6 py-3 bg-pink-500 text-white font-semibold rounded-xl hover:bg-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Try Again
+            </button>
+            <button
+              onClick={() => router.push("/students")}
+              className="px-6 py-3 bg-slate-500 text-white font-semibold rounded-xl hover:bg-slate-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Back to Students
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Student not found
   if (!student) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center">

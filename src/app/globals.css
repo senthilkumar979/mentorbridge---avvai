@@ -273,3 +273,7 @@ ul {
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out;
 }
+
+input, textarea {
+  color: #000 !important;
+}
