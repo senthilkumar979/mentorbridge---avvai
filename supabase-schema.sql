@@ -52,3 +52,43 @@ CREATE POLICY "Allow public insert access" ON students
 -- Create policy to allow public update access (adjust as needed)
 CREATE POLICY "Allow public update access" ON students
     FOR UPDATE USING (true);
+
+-- Create blogs table
+CREATE TABLE IF NOT EXISTS blogs (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  title TEXT NOT NULL,
+  author_name TEXT NOT NULL,
+  published_date TIMESTAMP WITH TIME ZONE NOT NULL,
+  cover_image_url TEXT,
+  link TEXT NOT NULL UNIQUE,
+  category TEXT NOT NULL DEFAULT 'Medium',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create indexes for better performance
+CREATE INDEX IF NOT EXISTS idx_blogs_link ON blogs(link);
+CREATE INDEX IF NOT EXISTS idx_blogs_published_date ON blogs(published_date);
+CREATE INDEX IF NOT EXISTS idx_blogs_category ON blogs(category);
+CREATE INDEX IF NOT EXISTS idx_blogs_created_at ON blogs(created_at);
+
+-- Create trigger to automatically update updated_at for blogs
+CREATE TRIGGER update_blogs_updated_at
+    BEFORE UPDATE ON blogs
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+-- Enable Row Level Security (RLS) for blogs
+ALTER TABLE blogs ENABLE ROW LEVEL SECURITY;
+
+-- Create policy to allow public read access for blogs
+CREATE POLICY "Allow public read access to blogs" ON blogs
+    FOR SELECT USING (true);
+
+-- Create policy to allow public insert access for blogs
+CREATE POLICY "Allow public insert access to blogs" ON blogs
+    FOR INSERT WITH CHECK (true);
+
+-- Create policy to allow public update access for blogs
+CREATE POLICY "Allow public update access to blogs" ON blogs
+    FOR UPDATE USING (true);

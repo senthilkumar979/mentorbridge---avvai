@@ -20,6 +20,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
       { id: "gallery", label: "Gallery", href: "/gallery", isPage: true },
       { id: "mentors", label: "Mentors", href: "/mentors", isPage: true },
       { id: "students", label: "Students", href: "/students", isPage: true },
+      { id: "blogs", label: "Blogs", href: "/blogs", isPage: true },
       { id: "contact", label: "Contact", href: "#contact" },
     ],
     []

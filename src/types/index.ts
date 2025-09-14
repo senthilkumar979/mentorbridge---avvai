@@ -17,3 +17,26 @@ export interface StatCardProps extends BaseComponentProps {
   label: string;
   description?: string;
 }
+
+export interface Blog {
+  id: string;
+  title: string;
+  author_name: string;
+  published_date: string;
+  cover_image_url?: string;
+  link: string;
+  category: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AddBlogRequest {
+  url: string;
+}
+
+export interface AddBlogResponse {
+  success: boolean;
+  message: string;
+  data?: Blog;
+  error?: string;
+}
