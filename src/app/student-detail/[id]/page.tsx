@@ -3,6 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useStudent } from "../../../hooks/useStudent";
+import { Footer } from "../../../components";
 
 export default function StudentDetailPage() {
   const params = useParams();
@@ -90,8 +91,8 @@ export default function StudentDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Back Button */}
         <div className="mb-8">
           <button
@@ -496,6 +497,8 @@ export default function StudentDetailPage() {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useStudents } from "../../hooks/useStudents";
+import { Footer } from "../../components";
 
 export default function StudentsPage() {
   const router = useRouter();
@@ -59,7 +60,7 @@ export default function StudentsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pb-12">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between">
@@ -82,7 +83,7 @@ export default function StudentsPage() {
           </div>
         </div>
       </header>
-      <div className="mt-20">
+      <div className="mt-20 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -282,6 +283,8 @@ export default function StudentsPage() {
           )}
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

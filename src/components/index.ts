@@ -9,3 +9,4 @@ export { ContactSection } from "./ContactSection";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
 export { Testimonials } from "./Testimonials";
+export { Gallery } from "./Gallery";
