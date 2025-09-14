@@ -91,6 +91,13 @@ export const placedStudents = [
       "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/mentorbridge-pics/Sakthi_Priya_S.jpg",
   },
   {
+    name: "Shri Shadha",
+    company: "CodiFi",
+    joiningDate: "15/09/2025",
+    avatar:
+      "https://wfkq0nguanh0273r.public.blob.vercel-storage.com/mentorbridge-pics/Shri_Shadha.jpg",
+  },
+  {
     name: "Sivasankari",
     company: "CodiFi",
     joiningDate: "21/07/2025",
