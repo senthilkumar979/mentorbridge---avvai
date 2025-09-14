@@ -29,14 +29,16 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
       onClick={handleBlogClick}
       className="group cursor-pointer bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden"
     >
-      <div className="relative h-48 sm:h-56 overflow-hidden">
-        {blog.cover_image_url ? (
-          <img
-            src={blog.cover_image_url}
-            alt={blog.title}
-            className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-full"
-          />
-        ) : (
+        <div className="relative h-48 sm:h-56 overflow-hidden">
+          {blog.cover_image_url ? (
+            <Image
+              src={blog.cover_image_url}
+              alt={blog.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
             <div className="text-white text-center">
               <svg

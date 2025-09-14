@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { AddBlogRequest, AddBlogResponse, Blog } from "@/types";
+import { AddBlogRequest, AddBlogResponse, AddAllBlogsResponse, AddAllBlogsResponseData, Blog } from "@/types";
+import { SupabaseClient } from '@supabase/supabase-js';
 
 interface RSSItem {
   title: string;
@@ -19,6 +20,7 @@ interface RSSResponse {
   };
   items: RSSItem[];
 }
+
 
 function extractCoverImageFromDescription(description: string): string | null {
   const imgMatch = description.match(/<img[^>]+src="([^"]+)"/i);
@@ -149,7 +151,7 @@ function findBlogPostInRSS(
 
 async function addAllBlogsFromAuthor(
   rssData: RSSResponse,
-  supabase: any
+  supabase: SupabaseClient
 ): Promise<{
   success: boolean;
   added: number;
@@ -208,7 +210,7 @@ async function addAllBlogsFromAuthor(
 
 export async function POST(
   request: NextRequest
-): Promise<NextResponse<AddBlogResponse>> {
+): Promise<NextResponse<AddBlogResponse | AddAllBlogsResponse>> {
   try {
     const body: AddBlogRequest = await request.json();
     const { url } = body;
@@ -267,7 +269,7 @@ export async function POST(
           skipped: results.skipped,
           errors: results.errors,
           total: rssData.items.length,
-        } as any,
+        } as AddAllBlogsResponseData,
       });
     }
 

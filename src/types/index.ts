@@ -40,3 +40,16 @@ export interface AddBlogResponse {
   data?: Blog;
   error?: string;
 }
+
+export interface AddAllBlogsResponseData {
+  added: number;
+  skipped: number;
+  errors: string[];
+  total: number;
+}
+
+export interface AddAllBlogsResponse {
+  success: boolean;
+  message: string;
+  data: AddAllBlogsResponseData;
+}

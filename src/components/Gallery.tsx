@@ -34,10 +34,10 @@ export const Gallery: React.FC<GalleryProps> = ({
     setSelectedImage(image);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedImage(null);
     setImageLoading(false);
-  };
+  }, []);
 
   const goToNext = useCallback(() => {
     const nextIndex = (currentIndex + 1) % images.length;
