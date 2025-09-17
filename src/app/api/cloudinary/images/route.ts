@@ -22,16 +22,28 @@ export async function GET(request: NextRequest) {
     const transformation =
       searchParams.get("transformation") || "f_auto,q_auto";
 
+    // Debug environment variables
+    const envDebug = {
+      cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+      apiKey: process.env.CLOUDINARY_API_KEY ? "***SET***" : "NOT_SET",
+      apiSecret: process.env.CLOUDINARY_API_SECRET ? "***SET***" : "NOT_SET",
+      nodeEnv: process.env.NODE_ENV,
+    };
+
+    console.log("Environment debug:", envDebug);
+
     // Validate environment variables
     if (
       !process.env.CLOUDINARY_CLOUD_NAME ||
       !process.env.CLOUDINARY_API_KEY ||
       !process.env.CLOUDINARY_API_SECRET
     ) {
+      console.error("Missing Cloudinary environment variables:", envDebug);
       return NextResponse.json(
         {
           error:
             "Cloudinary configuration is missing. Please check your environment variables.",
+          debug: envDebug,
         },
         { status: 500 }
       );
@@ -42,17 +54,42 @@ export async function GET(request: NextRequest) {
     console.log("Transformation:", transformation);
 
     // Fetch images from Cloudinary
-    const result = (await cloudinary.search
-      .expression(`folder:${folder}`)
-      .sort_by("created_at", "desc")
-      .max_results(maxResults)
-      .execute()) as CloudinarySearchResult;
+    let result: CloudinarySearchResult;
+    try {
+      result = (await cloudinary.search
+        .expression(`folder:${folder}`)
+        .sort_by("created_at", "desc")
+        .max_results(maxResults)
+        .execute()) as CloudinarySearchResult;
 
-    console.log(
-      "Cloudinary search result:",
-      result.resources.length,
-      "images found"
-    );
+      console.log(
+        "Cloudinary search result:",
+        result.resources?.length || 0,
+        "images found"
+      );
+    } catch (searchError) {
+      console.error("Cloudinary search error:", searchError);
+      return NextResponse.json(
+        {
+          error: "Failed to search Cloudinary",
+          details:
+            searchError instanceof Error
+              ? searchError.message
+              : "Unknown search error",
+          debug: envDebug,
+        },
+        { status: 500 }
+      );
+    }
+
+    if (!result.resources || result.resources.length === 0) {
+      console.warn(`No images found in folder: ${folder}`);
+      return NextResponse.json({
+        images: [],
+        message: `No images found in folder: ${folder}`,
+        debug: envDebug,
+      });
+    }
 
     // Transform Cloudinary response to our interface
     const images: CloudinaryImage[] = result.resources.map(
@@ -100,7 +137,18 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("Error fetching images from Cloudinary:", error);
     return NextResponse.json(
-      { error: "Failed to fetch images from Cloudinary" },
+      {
+        error: "Failed to fetch images from Cloudinary",
+        details: error instanceof Error ? error.message : "Unknown error",
+        debug: {
+          cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+          apiKey: process.env.CLOUDINARY_API_KEY ? "***SET***" : "NOT_SET",
+          apiSecret: process.env.CLOUDINARY_API_SECRET
+            ? "***SET***"
+            : "NOT_SET",
+          nodeEnv: process.env.NODE_ENV,
+        },
+      },
       { status: 500 }
     );
   }
