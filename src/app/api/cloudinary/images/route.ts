@@ -49,10 +49,6 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    console.log("Searching Cloudinary folder:", folder);
-    console.log("Max results:", maxResults);
-    console.log("Transformation:", transformation);
-
     // Fetch images from Cloudinary
     let result: CloudinarySearchResult;
     try {
@@ -61,12 +57,6 @@ export async function GET(request: NextRequest) {
         .sort_by("created_at", "desc")
         .max_results(maxResults)
         .execute()) as CloudinarySearchResult;
-
-      console.log(
-        "Cloudinary search result:",
-        result.resources?.length || 0,
-        "images found"
-      );
     } catch (searchError) {
       console.error("Cloudinary search error:", searchError);
       return NextResponse.json(
@@ -83,11 +73,9 @@ export async function GET(request: NextRequest) {
     }
 
     if (!result.resources || result.resources.length === 0) {
-      console.warn(`No images found in folder: ${folder}`);
       return NextResponse.json({
         images: [],
         message: `No images found in folder: ${folder}`,
-        debug: envDebug,
       });
     }
 
@@ -103,20 +91,6 @@ export async function GET(request: NextRequest) {
         // Generate URL manually to ensure proper format
         const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
         const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${transformation}/${resource.public_id}`;
-
-        // Also generate a fallback URL without transformation
-        const fallbackUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${resource.public_id}`;
-
-        console.log("Generated Cloudinary URL:", imageUrl);
-        console.log("Fallback URL (no transformation):", fallbackUrl);
-        console.log("Transformation string:", transformation);
-        console.log("Public ID:", resource.public_id);
-        console.log(
-          "Original width/height:",
-          resource.width,
-          "x",
-          resource.height
-        );
 
         const cloudinaryImage: CloudinaryImage = {
           id: resource.public_id,

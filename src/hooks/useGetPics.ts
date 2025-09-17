@@ -52,10 +52,6 @@ export const useGetPics = (
           totalFolders: folders.length,
         });
 
-        console.log(
-          `Fetching images from folder: ${folder} (${i + 1}/${folders.length})`
-        );
-
         try {
           const response = await fetch(
             `/api/cloudinary/images?folder=${encodeURIComponent(
@@ -66,19 +62,12 @@ export const useGetPics = (
           );
 
           if (!response.ok) {
-            console.warn(
-              `Failed to fetch images from folder ${folder}: ${response.statusText}`
-            );
             continue; // Skip this folder and continue with the next one
           }
 
           const data = await response.json();
 
           if (data.error) {
-            console.warn(
-              `Error fetching images from folder ${folder}:`,
-              data.error
-            );
             continue; // Skip this folder and continue with the next one
           }
 
@@ -92,11 +81,6 @@ export const useGetPics = (
 
           allImages.push(...folderImages);
           completedFolders.push(folder);
-
-          console.log(
-            `Successfully fetched ${folderImages.length} images from folder: ${folder}`
-          );
-          console.log(`Total images so far: ${allImages.length}`);
 
           // Update images state after each folder (for progressive loading)
           setImages([...allImages]);
@@ -112,21 +96,10 @@ export const useGetPics = (
           if (i < folders.length - 1) {
             await new Promise((resolve) => setTimeout(resolve, 100));
           }
-        } catch (folderError) {
-          console.warn(
-            `Error fetching images from folder ${folder}:`,
-            folderError
-          );
+        } catch {
           // Continue with the next folder
         }
       }
-
-      console.log(
-        `Completed fetching images from all folders. Total images: ${allImages.length}`
-      );
-      console.log(
-        `Successfully loaded from folders: ${completedFolders.join(", ")}`
-      );
 
       if (allImages.length === 0) {
         setError("There is something went wrong while fetching images");
@@ -135,7 +108,6 @@ export const useGetPics = (
       const errorMessage =
         err instanceof Error ? err.message : "Failed to fetch images";
       setError(errorMessage);
-      console.error("Error fetching images:", err);
     } finally {
       setIsLoading(false);
       setLoadingProgress({
