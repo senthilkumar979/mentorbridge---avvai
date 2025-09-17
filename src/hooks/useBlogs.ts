@@ -1,19 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
 import { Blog } from "@/types";
-
-interface UseBlogsOptions {
-  authorFilter?: string;
-  pageSize?: number;
-}
-
-interface PaginationInfo {
-  currentPage: number;
-  totalPages: number;
-  totalCount: number;
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
-}
+import { UseBlogsOptions, PaginationInfo } from "@/types/blog.types";
 
 export const useBlogs = (options: UseBlogsOptions = {}) => {
   const { authorFilter, pageSize = 30 } = options;

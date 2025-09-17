@@ -7,20 +7,7 @@ import {
   getFolderName,
   getTagline,
 } from "../constants/cloudinary";
-
-interface GalleryImage {
-  id: string;
-  src: string;
-  title: string;
-  alt: string;
-}
-
-interface GalleryProps {
-  images: GalleryImage[];
-  className?: string;
-  showTitle?: boolean;
-  gridCols?: "1" | "2" | "3" | "4" | "5" | "6";
-}
+import { GalleryImage, GalleryProps } from "../types/gallery.types";
 
 export const Gallery: React.FC<GalleryProps> = ({
   images,

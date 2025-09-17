@@ -1,13 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "../lib/supabase";
-import { ProfileData } from "../types/Profile.types";
-
-interface UseStudentReturn {
-  student: ProfileData | null;
-  loading: boolean;
-  error: string | null;
-  refetch: () => Promise<void>;
-}
+import { ProfileData, UseStudentReturn } from "../types/student.types";
 
 // Safe JSON parsing function
 const safeJsonParse = (value: unknown, fallback: unknown = null) => {

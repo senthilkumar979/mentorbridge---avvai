@@ -4,35 +4,11 @@ import {
   DEFAULT_TRANSFORMATION,
   DEFAULT_MAX_RESULTS,
 } from "@/constants/cloudinary";
-
-interface CloudinaryImage {
-  id: string;
-  src: string;
-  title: string;
-  alt: string;
-  public_id: string;
-  width: number;
-  height: number;
-  folder: string;
-}
-
-interface UseGetPicsOptions {
-  folders?: string[];
-  maxResults?: number;
-  transformation?: string;
-}
-
-interface UseGetPicsReturn {
-  images: CloudinaryImage[];
-  isLoading: boolean;
-  error: string | null;
-  refetch: () => void;
-  loadingProgress: {
-    currentFolder: string | null;
-    completedFolders: string[];
-    totalFolders: number;
-  };
-}
+import {
+  CloudinaryImage,
+  UseGetPicsOptions,
+  UseGetPicsReturn,
+} from "@/types/gallery.types";
 
 export const useGetPics = (
   options: UseGetPicsOptions = {}
@@ -153,7 +129,7 @@ export const useGetPics = (
       );
 
       if (allImages.length === 0) {
-        setError("No images found in any of the specified folders");
+        setError("There is something went wrong while fetching images");
       }
     } catch (err) {
       const errorMessage =

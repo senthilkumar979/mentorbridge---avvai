@@ -1,19 +1,10 @@
 import { v2 as cloudinary } from "cloudinary";
 import { NextRequest, NextResponse } from "next/server";
-
-interface CloudinaryResource {
-  public_id: string;
-  width: number;
-  height: number;
-  created_at: string;
-  [key: string]: unknown;
-}
-
-interface CloudinarySearchResult {
-  resources: CloudinaryResource[];
-  total_count: number;
-  [key: string]: unknown;
-}
+import {
+  CloudinaryResource,
+  CloudinarySearchResult,
+  CloudinaryImage,
+} from "@/types/gallery.types";
 
 // Configure Cloudinary
 cloudinary.config({
@@ -22,16 +13,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
 });
-
-interface CloudinaryImage {
-  id: string;
-  src: string;
-  title: string;
-  alt: string;
-  public_id: string;
-  width: number;
-  height: number;
-}
 
 export async function GET(request: NextRequest) {
   try {

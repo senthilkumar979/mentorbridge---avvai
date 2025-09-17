@@ -4,6 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useStudent } from "../../../hooks/useStudent";
 import { Footer } from "../../../components";
+import { ProfileData } from "../../../types/student.types";
 
 export default function StudentDetailPage() {
   const params = useParams();
