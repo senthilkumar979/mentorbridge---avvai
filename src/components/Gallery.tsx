@@ -1,7 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
+import {
+  CloudinaryFolder,
+  getFolderName,
+  getTagline,
+} from "../constants/cloudinary";
 
 interface GalleryImage {
   id: string;
@@ -53,15 +58,18 @@ export const Gallery: React.FC<GalleryProps> = ({
     setSelectedImage(images[prevIndex]);
   }, [currentIndex, images]);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === "ArrowRight") {
-      goToNext();
-    } else if (e.key === "ArrowLeft") {
-      goToPrevious();
-    } else if (e.key === "Escape") {
-      closeModal();
-    }
-  }, [goToNext, goToPrevious, closeModal]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        goToNext();
+      } else if (e.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (e.key === "Escape") {
+        closeModal();
+      }
+    },
+    [goToNext, goToPrevious, closeModal]
+  );
 
   useEffect(() => {
     if (selectedImage) {
@@ -94,6 +102,12 @@ export const Gallery: React.FC<GalleryProps> = ({
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
+                onError={() => {
+                  console.error("Gallery image failed to load:", image.src);
+                }}
+                onLoad={() => {
+                  console.log("Gallery image loaded successfully:", image.src);
+                }}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
             </div>
@@ -101,7 +115,7 @@ export const Gallery: React.FC<GalleryProps> = ({
             {showTitle && (
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                 <h3 className="text-white font-semibold text-lg group-hover:text-xl transition-all duration-300">
-                  {image.title}
+                  {getFolderName(image.title as CloudinaryFolder)}
                 </h3>
               </div>
             )}
@@ -292,10 +306,10 @@ export const Gallery: React.FC<GalleryProps> = ({
                   )}
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-                  {selectedImage.title}
+                  {getFolderName(selectedImage.title as CloudinaryFolder)}
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-200">
-                  {selectedImage.alt}
+                  {getTagline(selectedImage.title as CloudinaryFolder)}
                 </p>
               </div>
             </div>
