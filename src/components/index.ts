@@ -10,3 +10,4 @@ export { Footer } from "./Footer";
 export { Header } from "./Header";
 export { Testimonials } from "./Testimonials";
 export { Gallery } from "./Gallery";
+export { Pagination } from "./Pagination";

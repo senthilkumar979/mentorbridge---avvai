@@ -32,10 +32,13 @@ export default function StudentsPage() {
     [students]
   );
 
-  const uniqueBatches = useMemo(
-    () => [...new Set(students.map((profile) => profile.batch))].sort(),
-    [students]
-  );
+  const uniqueBatches = useMemo(() => {
+    const batches = [
+      ...new Set(students.map((profile) => profile.batch)),
+    ].sort();
+    console.log("Available batches:", batches);
+    return batches;
+  }, [students]);
 
   // Filter profiles based on search and filters
   const filteredProfiles = useMemo(() => {
@@ -46,7 +49,12 @@ export default function StudentsPage() {
       const matchesRole = !selectedRole || profile.role === selectedRole;
       const matchesCompany =
         !selectedCompany || profile.company === selectedCompany;
-      const matchesBatch = !selectedBatch || profile.batch === selectedBatch;
+
+      // Robust batch matching with proper string comparison
+      const profileBatch = String(profile.batch || "").trim();
+      const selectedBatchTrimmed = String(selectedBatch || "").trim();
+      const matchesBatch =
+        !selectedBatch || profileBatch === selectedBatchTrimmed;
 
       return matchesSearch && matchesRole && matchesCompany && matchesBatch;
     });
