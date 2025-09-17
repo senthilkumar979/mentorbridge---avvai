@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { AddBlogRequest, AddBlogResponse } from '@/types';
+import { AddBlogRequest, AddBlogResponse } from "@/types/blog.types";
+import { useState } from "react";
 
 export const useAddBlog = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,10 +10,10 @@ export const useAddBlog = () => {
       setIsLoading(true);
       setError(null);
 
-      const response = await fetch('/api/add-blog', {
-        method: 'POST',
+      const response = await fetch("/api/add-blog", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ url } as AddBlogRequest),
       });
@@ -21,17 +21,18 @@ export const useAddBlog = () => {
       const result: AddBlogResponse = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error(result.error || result.message || 'Failed to add blog');
+        throw new Error(result.error || result.message || "Failed to add blog");
       }
 
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to add blog';
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to add blog";
       setError(errorMessage);
       return {
         success: false,
         message: errorMessage,
-        error: errorMessage
+        error: errorMessage,
       };
     } finally {
       setIsLoading(false);
@@ -42,6 +43,6 @@ export const useAddBlog = () => {
     addBlog,
     isLoading,
     error,
-    clearError: () => setError(null)
+    clearError: () => setError(null),
   };
 };

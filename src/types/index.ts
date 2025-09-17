@@ -2,7 +2,6 @@
 export * from "./gallery.types";
 export * from "./pagination.types";
 export * from "./student.types";
-export * from "./blog.types";
 
 // Common component types
 export interface BaseComponentProps {

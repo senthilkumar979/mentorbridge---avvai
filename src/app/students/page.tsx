@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ProfileData } from "../../types/student.types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useStudents } from "../../hooks/useStudents";
@@ -26,7 +25,11 @@ export default function StudentsPage() {
   const uniqueCompanies = useMemo(
     () =>
       [
-        ...new Set(students.map((profile) => profile.company).filter(Boolean)),
+        ...new Set(
+          students
+            .map((profile) => profile.company)
+            .filter((company): company is string => Boolean(company))
+        ),
       ].sort(),
     [students]
   );

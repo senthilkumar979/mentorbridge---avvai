@@ -1,7 +1,13 @@
-import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { AddBlogRequest, AddBlogResponse, AddAllBlogsResponse, AddAllBlogsResponseData, Blog } from "@/types";
-import { SupabaseClient } from '@supabase/supabase-js';
+import {
+  AddAllBlogsResponse,
+  AddAllBlogsResponseData,
+  AddBlogRequest,
+  AddBlogResponse,
+  Blog,
+} from "@/types/blog.types";
+import { SupabaseClient } from "@supabase/supabase-js";
+import { NextRequest, NextResponse } from "next/server";
 
 interface RSSItem {
   title: string;
@@ -20,7 +26,6 @@ interface RSSResponse {
   };
   items: RSSItem[];
 }
-
 
 function extractCoverImageFromDescription(description: string): string | null {
   const imgMatch = description.match(/<img[^>]+src="([^"]+)"/i);

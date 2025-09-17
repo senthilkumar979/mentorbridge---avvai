@@ -1,7 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
-import { Blog } from "@/types";
-import { UseBlogsOptions, PaginationInfo } from "@/types/blog.types";
+import { Blog, PaginationInfo, UseBlogsOptions } from "@/types/blog.types";
+import { useCallback, useEffect, useState } from "react";
 
 export const useBlogs = (options: UseBlogsOptions = {}) => {
   const { authorFilter, pageSize = 30 } = options;

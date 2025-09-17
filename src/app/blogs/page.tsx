@@ -13,7 +13,6 @@ import {
 import { useBlogs } from "@/hooks/useBlogs";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
-import { Blog } from "@/types";
 
 export default function BlogsPage() {
   const [selectedAuthor, setSelectedAuthor] = React.useState<string>("all");

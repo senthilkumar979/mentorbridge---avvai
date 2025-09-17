@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
           resource.height
         );
 
-        return {
+        const cloudinaryImage: CloudinaryImage = {
           id: resource.public_id,
           src: imageUrl,
           title: title,
@@ -89,7 +89,10 @@ export async function GET(request: NextRequest) {
           public_id: resource.public_id,
           width: resource.width,
           height: resource.height,
+          folder: folder,
         };
+
+        return cloudinaryImage;
       }
     );
 
