@@ -65,13 +65,13 @@ export const ContactSection: React.FC<SectionProps> = ({
       icon: "📍",
       title: "Location",
       details: "Dindigul, Tamilnadu, India",
-      description: "Our training center is located in the heart of Tamil Nadu",
+      description: "Our base location is located near the center of Tamil Nadu",
     },
     {
       icon: "📞",
       title: "Phone",
-      details: "+91 9176008807, +32 466040666",
-      description: "Call us for immediate assistance and inquiries",
+      details: "+91 9176008807, +32 476563710",
+      description: "Call us for assistance and inquiries",
     },
     {
       icon: "✉️",
