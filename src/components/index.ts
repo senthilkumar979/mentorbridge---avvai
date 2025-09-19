@@ -16,3 +16,5 @@ export { StudentsFilters } from "./StudentsFilters";
 export { BlogCard } from "./BlogCard";
 export { BlogFilters } from "./BlogFilters";
 export { LoadingSkeleton, ErrorState, EmptyState } from "./BlogLoadingStates";
+export { EventPopup } from "./EventPopup";
+export { EventPopupProvider } from "./EventPopupProvider";
