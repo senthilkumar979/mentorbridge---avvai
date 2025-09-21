@@ -8,5 +8,5 @@ export const EVENT_CONFIG = {
   registrationLink: "https://live.zoho.in/rbik-ktz-dki",
   imageUrl:
     "https://91qunajyvl11yxyb.public.blob.vercel-storage.com/events/event1.png",
-  isActive: true,
+  isActive: false,
 } as const;
