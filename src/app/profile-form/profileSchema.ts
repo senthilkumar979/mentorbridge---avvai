@@ -1,42 +1,50 @@
 import { z } from "zod";
 
-// File validation schema
+// File validation schema for file arrays
 const imageFileSchema = z
-  .any()
+  .array(z.any())
   .refine(
-    (file) => !file || (file instanceof File && file.size <= 2 * 1024 * 1024),
+    (files) =>
+      !files ||
+      files.length === 0 ||
+      (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024),
     "Image size must be less than 2MB"
   )
   .refine(
-    (file) =>
-      !file ||
-      (file instanceof File &&
+    (files) =>
+      !files ||
+      files.length === 0 ||
+      (files[0] instanceof File &&
         [
           "image/jpeg",
           "image/jpg",
           "image/png",
           "image/gif",
           "image/webp",
-        ].includes(file.type)),
+        ].includes(files[0].type)),
     "Only JPEG, PNG, GIF, and WebP images are allowed"
   )
   .optional();
 
 const documentFileSchema = z
-  .any()
+  .array(z.any())
   .refine(
-    (file) => !file || (file instanceof File && file.size <= 2 * 1024 * 1024),
+    (files) =>
+      !files ||
+      files.length === 0 ||
+      (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024),
     "Document size must be less than 2MB"
   )
   .refine(
-    (file) =>
-      !file ||
-      (file instanceof File &&
+    (files) =>
+      !files ||
+      files.length === 0 ||
+      (files[0] instanceof File &&
         [
           "application/pdf",
           "application/msword",
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        ].includes(file.type)),
+        ].includes(files[0].type)),
     "Only PDF, DOC, and DOCX files are allowed"
   )
   .optional();

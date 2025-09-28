@@ -103,10 +103,8 @@ export default function ProfileFormPage() {
     id: string,
     type: "picture" | "resume"
   ): Promise<string> => {
-    // Validate file size
-    if (file.size > 2 * 1024 * 1024) {
-      throw new Error("File size must be less than 2MB");
-    }
+    // File size and type validation is handled by the schema
+    // Additional validation can be added here if needed
 
     // Validate file type
     if (type === "picture") {
