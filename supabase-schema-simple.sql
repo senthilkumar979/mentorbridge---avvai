@@ -1,11 +1,5 @@
--- Create function to update updated_at timestamp (must be created first)
-CREATE OR REPLACE FUNCTION update_updated_at_column()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.updated_at = NOW();
-    RETURN NEW;
-END;
-$$ language 'plpgsql';
+-- Simple schema without triggers for now
+-- This will create the tables without the automatic updated_at functionality
 
 -- Create students table
 CREATE TABLE IF NOT EXISTS students (
@@ -31,12 +25,6 @@ CREATE TABLE IF NOT EXISTS students (
 CREATE INDEX IF NOT EXISTS idx_students_email ON students(email);
 CREATE INDEX IF NOT EXISTS idx_students_batch ON students(batch);
 CREATE INDEX IF NOT EXISTS idx_students_created_at ON students(created_at);
-
--- Create trigger to automatically update updated_at
-CREATE TRIGGER update_students_updated_at
-    BEFORE UPDATE ON students
-    FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE students ENABLE ROW LEVEL SECURITY;
@@ -72,12 +60,6 @@ CREATE INDEX IF NOT EXISTS idx_blogs_published_date ON blogs(published_date);
 CREATE INDEX IF NOT EXISTS idx_blogs_category ON blogs(category);
 CREATE INDEX IF NOT EXISTS idx_blogs_created_at ON blogs(created_at);
 
--- Create trigger to automatically update updated_at for blogs
-CREATE TRIGGER update_blogs_updated_at
-    BEFORE UPDATE ON blogs
-    FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
-
 -- Enable Row Level Security (RLS) for blogs
 ALTER TABLE blogs ENABLE ROW LEVEL SECURITY;
 
@@ -98,8 +80,8 @@ CREATE TABLE IF NOT EXISTS courses (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
   description TEXT NOT NULL,
-  created_by TEXT NOT NULL,
-  category TEXT NOT NULL,
+  category TEXT NOT NULL DEFAULT 'General',
+  created_by TEXT NOT NULL, -- Admin user ID
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -107,12 +89,7 @@ CREATE TABLE IF NOT EXISTS courses (
 -- Create indexes for better performance
 CREATE INDEX IF NOT EXISTS idx_courses_created_by ON courses(created_by);
 CREATE INDEX IF NOT EXISTS idx_courses_created_at ON courses(created_at);
-
--- Create trigger to automatically update updated_at for courses
-CREATE TRIGGER update_courses_updated_at
-    BEFORE UPDATE ON courses
-    FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
+CREATE INDEX IF NOT EXISTS idx_courses_category ON courses(category);
 
 -- Enable Row Level Security (RLS) for courses
 ALTER TABLE courses ENABLE ROW LEVEL SECURITY;
@@ -148,12 +125,6 @@ CREATE TABLE IF NOT EXISTS chapters (
 CREATE INDEX IF NOT EXISTS idx_chapters_course_id ON chapters(course_id);
 CREATE INDEX IF NOT EXISTS idx_chapters_order ON chapters(course_id, "order");
 CREATE INDEX IF NOT EXISTS idx_chapters_created_at ON chapters(created_at);
-
--- Create trigger to automatically update updated_at for chapters
-CREATE TRIGGER update_chapters_updated_at
-    BEFORE UPDATE ON chapters
-    FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
 
 -- Enable Row Level Security (RLS) for chapters
 ALTER TABLE chapters ENABLE ROW LEVEL SECURITY;

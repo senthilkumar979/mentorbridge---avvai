@@ -17,6 +17,7 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
       { id: "features", label: "Features", href: "#features" },
       { id: "achievements", label: "Achievements", href: "#achievements" },
       { id: "products", label: "Products", href: "#products" },
+      { id: "courses", label: "Courses", href: "/courses", isPage: true },
       { id: "gallery", label: "Gallery", href: "/gallery", isPage: true },
       { id: "mentors", label: "Mentors", href: "/mentors", isPage: true },
       { id: "students", label: "Students", href: "/students", isPage: true },

@@ -1,8 +1,8 @@
+import { EventPopupProvider, QueryProvider } from "@/components";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lexend } from "next/font/google";
-import { EventPopupProvider } from "@/components";
 import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,10 +64,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <EventPopupProvider />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <QueryProvider>
+          <EventPopupProvider />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </QueryProvider>
       </body>
     </html>
   );
