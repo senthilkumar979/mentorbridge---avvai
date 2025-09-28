@@ -1,13 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
-import Image from "next/image";
+import { saveStudentProfile } from "../../lib/students";
 import { ProfileData } from "../../types/Profile.types";
 import { profileSchema } from "./profileSchema";
-import { saveStudentProfile } from "../../lib/students";
 
 // Zod schema for form validation
 
@@ -30,6 +30,7 @@ export default function ProfileFormPage() {
     control,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
@@ -39,7 +40,12 @@ export default function ProfileFormPage() {
       inspirations: [""],
       batch: "2026",
       socialLinks: { linkedIn: "", gitHub: "", website: "" },
-      mentorBridgeExp: { company: "", role: "", summary: "", website: "" },
+      mentorBridgeExp: {
+        company: "MentorBridge",
+        role: "",
+        summary: "",
+        website: "",
+      },
     },
   });
 
@@ -86,7 +92,6 @@ export default function ProfileFormPage() {
     remove: removeSkill,
   } = useFieldArray({
     control,
-    // @ts-expect-error - useFieldArray type inference issue with string arrays
     name: "skillSets",
   });
 
@@ -96,7 +101,6 @@ export default function ProfileFormPage() {
     remove: removeInspiration,
   } = useFieldArray({
     control,
-    // @ts-expect-error - useFieldArray type inference issue with string arrays
     name: "inspirations",
   });
 
@@ -257,7 +261,7 @@ export default function ProfileFormPage() {
 
         // Clear uploaded files state
         setUploadedFiles({ picture: null, resume: null });
-
+        reset();
         alert("Profile submitted successfully! Your data has been saved.");
       } catch (error) {
         setUploadProgress((prev) => ({
@@ -717,22 +721,6 @@ export default function ProfileFormPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Company *
-                    </label>
-                    <input
-                      {...register("mentorBridgeExp.company")}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Enter company name"
-                    />
-                    {errors.mentorBridgeExp?.company && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.mentorBridgeExp.company.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Role *
                     </label>
                     <input
@@ -747,7 +735,7 @@ export default function ProfileFormPage() {
                     )}
                   </div>
 
-                  <div className="md:col-span-2">
+                  <div className="">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Website
                     </label>
@@ -807,25 +795,36 @@ export default function ProfileFormPage() {
                       placeholder="Enter skill"
                     />
                     {skillFields.length > 1 && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => removeSkill(index)}
+                          className="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+                          title="Remove skill"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                            />
+                          </svg>
+                        </button>
+                      </>
+                    )}
+                    {skillFields.length >= 1 && (
                       <button
                         type="button"
-                        onClick={() => removeSkill(index)}
-                        className="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
-                        title="Remove skill"
+                        onClick={() => appendSkill("")}
+                        className="px-3 py-1 bg-gray-500 text-white rounded-md hover:bg-ghost-white hover:text-gray-200 hover:text-white transition-colors cursor-pointer"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                          />
-                        </svg>
+                        +
                       </button>
                     )}
                   </div>
@@ -881,6 +880,15 @@ export default function ProfileFormPage() {
                             d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                           />
                         </svg>
+                      </button>
+                    )}
+                    {inspirationFields.length >= 1 && (
+                      <button
+                        type="button"
+                        onClick={() => appendInspiration("")}
+                        className="px-3 py-1 bg-gray-500 text-white rounded-md hover:bg-ghost-white hover:text-gray-200 hover:text-white transition-colors cursor-pointer"
+                      >
+                        +
                       </button>
                     )}
                   </div>
@@ -1131,18 +1139,6 @@ export default function ProfileFormPage() {
               </button>
             </div>
           </form>
-
-          {/* Display Submitted Data */}
-          {submittedData && (
-            <div className="mt-8 p-6 bg-gray-100 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Submitted Data (JSON):
-              </h3>
-              <pre className="bg-white p-4 rounded border overflow-auto text-sm">
-                {JSON.stringify(submittedData, null, 2)}
-              </pre>
-            </div>
-          )}
         </div>
       </div>
     </div>

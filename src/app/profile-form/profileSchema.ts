@@ -1,52 +1,100 @@
 import { z } from "zod";
 
-// File validation schema for file arrays
+// File validation schema for FileList objects
 const imageFileSchema = z
-  .array(z.any())
-  .refine(
-    (files) =>
-      !files ||
-      files.length === 0 ||
-      (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024),
-    "Image size must be less than 2MB"
-  )
-  .refine(
-    (files) =>
-      !files ||
-      files.length === 0 ||
-      (files[0] instanceof File &&
-        [
-          "image/jpeg",
-          "image/jpg",
-          "image/png",
-          "image/gif",
-          "image/webp",
-        ].includes(files[0].type)),
-    "Only JPEG, PNG, GIF, and WebP images are allowed"
-  )
+  .any()
+  .refine((files) => {
+    if (!files) return true;
+    if (files instanceof FileList) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024)
+      );
+    }
+    if (Array.isArray(files)) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024)
+      );
+    }
+    return false;
+  }, "Image size must be less than 2MB")
+  .refine((files) => {
+    if (!files) return true;
+    if (files instanceof FileList) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File &&
+          [
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+            "image/gif",
+            "image/webp",
+          ].includes(files[0].type))
+      );
+    }
+    if (Array.isArray(files)) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File &&
+          [
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+            "image/gif",
+            "image/webp",
+          ].includes(files[0].type))
+      );
+    }
+    return false;
+  }, "Only JPEG, PNG, GIF, and WebP images are allowed")
   .optional();
 
 const documentFileSchema = z
-  .array(z.any())
-  .refine(
-    (files) =>
-      !files ||
-      files.length === 0 ||
-      (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024),
-    "Document size must be less than 2MB"
-  )
-  .refine(
-    (files) =>
-      !files ||
-      files.length === 0 ||
-      (files[0] instanceof File &&
-        [
-          "application/pdf",
-          "application/msword",
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        ].includes(files[0].type)),
-    "Only PDF, DOC, and DOCX files are allowed"
-  )
+  .any()
+  .refine((files) => {
+    if (!files) return true;
+    if (files instanceof FileList) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024)
+      );
+    }
+    if (Array.isArray(files)) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File && files[0].size <= 2 * 1024 * 1024)
+      );
+    }
+    return false;
+  }, "Document size must be less than 2MB")
+  .refine((files) => {
+    if (!files) return true;
+    if (files instanceof FileList) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File &&
+          [
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          ].includes(files[0].type))
+      );
+    }
+    if (Array.isArray(files)) {
+      return (
+        files.length === 0 ||
+        (files[0] instanceof File &&
+          [
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          ].includes(files[0].type))
+      );
+    }
+    return false;
+  }, "Only PDF, DOC, and DOCX files are allowed")
   .optional();
 
 export const profileSchema = z.object({
