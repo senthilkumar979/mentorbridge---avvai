@@ -20,3 +20,7 @@ export { EventPopup } from "./EventPopup";
 export { EventPopupProvider } from "./EventPopupProvider";
 export { QueryProvider } from "./QueryProvider";
 export { RichTextEditor } from "./RichTextEditor";
+export { TipTapEditor } from "./TipTapEditor";
+export { SimpleTipTapEditor } from "./SimpleTipTapEditor";
+export { LinkModal } from "./LinkModal";
+export { ImageModal } from "./ImageModal";

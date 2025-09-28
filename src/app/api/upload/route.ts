@@ -3,38 +3,21 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData();
-    const file = formData.get("file") as File;
-    const id = formData.get("id") as string;
-    const type = formData.get("type") as string; // 'resume' or 'picture'
+    const { searchParams } = new URL(request.url);
+    const filename = searchParams.get("filename");
 
-    if (!file) {
-      return NextResponse.json({ error: "No file provided" }, { status: 400 });
-    }
-
-    if (!id) {
-      return NextResponse.json({ error: "No ID provided" }, { status: 400 });
-    }
-
-    if (!type || !["resume", "picture"].includes(type)) {
+    if (!filename) {
       return NextResponse.json(
-        { error: 'Invalid type. Must be "resume" or "picture"' },
+        { error: "Filename is required" },
         { status: 400 }
       );
     }
 
-    // Get file extension
-    const fileExtension = file.name.split(".").pop() || "";
-
-    // Create filename with ID and extension
-    const filename = `${id}.${fileExtension}`;
-
-    // Upload to Vercel Blob
-    const blob = await put(filename, file, {
+    const blob = await put(filename, request.body, {
       access: "public",
     });
 
-    return NextResponse.json({ url: blob.url });
+    return NextResponse.json(blob);
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
