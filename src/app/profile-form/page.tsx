@@ -86,6 +86,7 @@ export default function ProfileFormPage() {
     remove: removeSkill,
   } = useFieldArray({
     control,
+    // @ts-expect-error - useFieldArray type inference issue with string arrays
     name: "skillSets",
   });
 
@@ -95,6 +96,7 @@ export default function ProfileFormPage() {
     remove: removeInspiration,
   } = useFieldArray({
     control,
+    // @ts-expect-error - useFieldArray type inference issue with string arrays
     name: "inspirations",
   });
 
@@ -226,6 +228,10 @@ export default function ProfileFormPage() {
           ...data.socialLinks,
           website: data.socialLinks.website || undefined,
         },
+        skillSets: data.skillSets.filter((skill) => skill.trim() !== ""),
+        inspirations: data.inspirations.filter(
+          (inspiration) => inspiration.trim() !== ""
+        ),
         company: data.company || undefined,
       };
 
