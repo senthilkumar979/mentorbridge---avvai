@@ -1,6 +1,6 @@
 {
   "name": "Avvai",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -45,6 +45,7 @@
     "@vercel/blob": "^1.1.1",
     "@vercel/speed-insights": "^1.2.0",
     "cloudinary": "^2.7.0",
+    "framer-motion": "^12.23.24",
     "lodash.throttle": "^4.1.1",
     "lowlight": "^3.3.0",
     "lucide-react": "^0.544.0",
@@ -53,6 +54,7 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
     "react-hotkeys-hook": "^5.1.0",
+    "react-use-measure": "^2.1.7",
     "resend": "^6.0.3",
     "zod": "^4.1.8"
   },

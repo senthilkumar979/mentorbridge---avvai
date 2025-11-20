@@ -24,3 +24,4 @@ export { TipTapEditor } from "./TipTapEditor";
 export { SimpleTipTapEditor } from "./SimpleTipTapEditor";
 export { LinkModal } from "./LinkModal";
 export { ImageModal } from "./ImageModal";
+export { HallOfFameSection } from "./HallOfFameSection";

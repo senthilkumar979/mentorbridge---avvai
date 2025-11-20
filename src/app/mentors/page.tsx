@@ -3,6 +3,7 @@
 import { Footer } from "@/components";
 import Link from "next/link";
 import { useState } from "react";
+import { SubPageHeader } from "../../components/SubPageHeader";
 
 export default function MentorsPage() {
   const [activeMentorIndex, setActiveMentorIndex] = useState(0);
@@ -183,28 +184,7 @@ export default function MentorsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex items-center justify-between flex-wrap">
-            <div className="flex items-center space-x-2 sm:space-x-4 flex-grow">
-              <Link
-                href="/"
-                className="text-xl sm:text-2xl font-bold text-[#d53f8c] hover:text-[#0a0a0a] transition-colors duration-300"
-              >
-                MentorBridge
-              </Link>
-              <span className="hidden sm:inline text-gray-400">|</span>
-              <span className="text-gray-600 text-sm sm:text-base font-medium">Our Mentors</span>
-            </div>
-            <Link
-              href="/"
-              className="text-[#d53f8c] hover:text-[#b83280] text-sm sm:text-base font-medium transition-colors duration-300 mt-2 sm:mt-0"
-            >
-              ← Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SubPageHeader title="Our Mentors" />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

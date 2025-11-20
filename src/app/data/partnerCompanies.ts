@@ -13,6 +13,6 @@ export const partnerCompanies = [
   },
   {
     name: "Kylonix",
-    logo: "https://klyonix.com/wp-content/uploads/2025/03/KlyONIX-Logo-Trans.png",
+    logo: "https://klyonix.com/wp-content/uploads/2025/09/KlyONIX-Logo-Trans-copy.png",
   },
 ];

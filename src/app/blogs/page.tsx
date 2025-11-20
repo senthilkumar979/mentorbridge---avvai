@@ -1,18 +1,18 @@
 "use client";
 
-import React from "react";
 import {
-  Footer,
-  Pagination,
   BlogCard,
   BlogFilters,
-  LoadingSkeleton,
-  ErrorState,
   EmptyState,
+  ErrorState,
+  Footer,
+  LoadingSkeleton,
+  Pagination,
 } from "@/components";
 import { useBlogs } from "@/hooks/useBlogs";
 import { supabase } from "@/lib/supabase";
-import Link from "next/link";
+import React from "react";
+import { SubPageHeader } from "../../components/SubPageHeader";
 
 export default function BlogsPage() {
   const [selectedAuthor, setSelectedAuthor] = React.useState<string>("all");
@@ -66,28 +66,7 @@ export default function BlogsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between">
-            <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4 mb-4 sm:mb-0">
-              <Link
-                href="/"
-                className="text-xl sm:text-2xl font-bold text-[#d53f8c] hover:text-[#b83280] transition-colors duration-300"
-              >
-                MentorBridge
-              </Link>
-              <span className="text-gray-400 hidden sm:block">|</span>
-              <span className="text-gray-600 font-medium">Blogs</span>
-            </div>
-            <Link
-              href="/"
-              className="text-[#d53f8c] hover:text-[#b83280] font-medium transition-colors duration-300"
-            >
-              ← Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SubPageHeader title="Blogs" />
 
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-gradient-to-br from-primary to-primary-dark">

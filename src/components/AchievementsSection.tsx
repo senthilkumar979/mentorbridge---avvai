@@ -1,8 +1,9 @@
-import { partnerCompanies } from "@/app/data/partnerCompanies";
 import { placedStudents } from "@/app/data/placedStudents";
 import { SectionProps } from "@/types";
 import Image from "next/image";
 import React from "react";
+import { PartnerCompaniesList } from "./PartnerCompaniesList";
+import HallOfFameSection from "./HallOfFameSection";
 
 export const AchievementsSection: React.FC<SectionProps> = ({
   className = "",
@@ -38,8 +39,9 @@ export const AchievementsSection: React.FC<SectionProps> = ({
               excellent career opportunities.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {partnerCompanies.map((company, index) => (
+          <div className="w-full h-full">
+            <PartnerCompaniesList />
+            {/* {partnerCompanies.map((company, index) => (
               <div
                 key={index}
                 className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center hover:bg-gray-100 transition-all duration-300"
@@ -57,8 +59,9 @@ export const AchievementsSection: React.FC<SectionProps> = ({
                   {company.name}
                 </h3>
               </div>
-            ))}
+            ))} */}
           </div>
+          <HallOfFameSection />
         </div>
 
         {/* Student Placements */}
