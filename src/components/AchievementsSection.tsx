@@ -3,7 +3,6 @@ import { SectionProps } from "@/types";
 import Image from "next/image";
 import React from "react";
 import { PartnerCompaniesList } from "./PartnerCompaniesList";
-import HallOfFameSection from "./HallOfFameSection";
 
 export const AchievementsSection: React.FC<SectionProps> = ({
   className = "",
@@ -41,27 +40,7 @@ export const AchievementsSection: React.FC<SectionProps> = ({
           </div>
           <div className="w-full h-full">
             <PartnerCompaniesList />
-            {/* {partnerCompanies.map((company, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center hover:bg-gray-100 transition-all duration-300"
-              >
-                <div className="mb-4">
-                  <Image
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    width={120}
-                    height={48}
-                    className="h-12 w-auto mx-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {company.name}
-                </h3>
-              </div>
-            ))} */}
           </div>
-          <HallOfFameSection />
         </div>
 
         {/* Student Placements */}

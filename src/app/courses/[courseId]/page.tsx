@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import { useCourse } from "@/hooks/useCourses";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { Chapter } from "@/types/course.types";
@@ -16,14 +17,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-interface CourseDetailPageProps {
-  params: {
-    courseId: string;
-  };
-}
-
-export default function CourseDetailPage({ params }: CourseDetailPageProps) {
-  const { courseId } = params;
+export default function CourseDetailPage() {
+  const params = useParams();
+  const courseId = params.courseId as string;
   const [selectedChapterId, setSelectedChapterId] = useState<string | null>(
     null
   );

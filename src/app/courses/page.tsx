@@ -3,6 +3,7 @@
 import {
   COURSE_CATEGORIES,
   getCategoryColor,
+  type CourseCategory,
 } from "@/constants/courseCategories";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { useCourses } from "@/hooks/useCourses";
@@ -137,9 +138,9 @@ interface CourseCardProps {
 
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   const progressPercentage =
-    course.totalChapters > 0
+    (course.totalChapters ?? 0) > 0
       ? Math.round(
-          ((course.completedChapters || 0) / course.totalChapters) * 100
+          ((course.completedChapters || 0) / (course.totalChapters ?? 1)) * 100
         )
       : 0;
 
@@ -161,7 +162,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                 </h3>
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                    course.category
+                    course.category as CourseCategory
                   )}`}
                 >
                   {course.category}
@@ -183,7 +184,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         </p>
 
         {/* Progress Bar */}
-        {course.totalChapters > 0 && (
+        {(course.totalChapters ?? 0) > 0 && (
           <div className="mb-4">
             <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
               <span>Progress</span>

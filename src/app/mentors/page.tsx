@@ -11,7 +11,7 @@ export default function MentorsPage() {
   const mentors = [
     {
       name: "Senthil Kumar Thangavel",
-      title: "Senior Specialist - Software Engineering | Education Mentor",
+      title: "Principal Engineer | Education Mentor",
       avatar: "👨‍💻",
       about:
         "Steering the helm at BNP Paribas Fortis as a Senior Developer II, crafting high-performance web applications that drive business success. With a solid foundation in the MERN stack and JAVA Spring Boot over a decade of experience, specialized in developing scalable solutions that enhance user experience and operational efficiency.",
@@ -33,7 +33,7 @@ export default function MentorsPage() {
       ],
       experience: [
         {
-          role: "Senior Developer II",
+          role: "Principal Engineer",
           company: "BNP Paribas Fortis",
           period: "Jul 2025 - Present",
           location: "Brussels, Belgium",

@@ -51,7 +51,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-sm font-medium">No Image</p>
+              <p className="text-sm font-medium"></p>
             </div>
           </div>
         )}

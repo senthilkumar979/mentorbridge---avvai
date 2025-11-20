@@ -229,8 +229,8 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertTable = useCallback(() => {
     const rows = prompt("Enter number of rows (2-10):", "3");
     const cols = prompt("Enter number of columns (2-6):", "3");
-    const numRows = Math.min(Math.max(parseInt(rows) || 3, 2), 10);
-    const numCols = Math.min(Math.max(parseInt(cols) || 3, 2), 6);
+    const numRows = Math.min(Math.max(parseInt(rows || "3") || 3, 2), 10);
+    const numCols = Math.min(Math.max(parseInt(cols || "3") || 3, 2), 6);
 
     let tableHtml = `
       <table style="

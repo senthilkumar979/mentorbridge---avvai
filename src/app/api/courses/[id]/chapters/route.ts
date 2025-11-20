@@ -3,14 +3,14 @@ import { supabase } from "@/lib/supabase";
 import { CreateChapterData } from "@/types/course.types";
 
 interface RouteParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     const { data, error } = await supabase
       .from("chapters")
@@ -37,7 +37,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
 export async function POST(request: NextRequest, { params }: RouteParams) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body: Omit<CreateChapterData, "course_id"> = await request.json();
 
     // Validate required fields

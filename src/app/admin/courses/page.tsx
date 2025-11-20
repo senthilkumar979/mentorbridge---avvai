@@ -3,6 +3,7 @@
 import {
   COURSE_CATEGORIES,
   getCategoryColor,
+  type CourseCategory,
 } from "@/constants/courseCategories";
 import { useChapters, useDeleteChapter } from "@/hooks/useChapters";
 import {
@@ -501,7 +502,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 </h3>
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                    course.category as any
+                    course.category as CourseCategory
                   )}`}
                 >
                   {course.category}

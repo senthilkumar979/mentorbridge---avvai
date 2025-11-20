@@ -3,14 +3,14 @@ import { supabase } from "@/lib/supabase";
 import { UpdateChapterData } from "@/types/course.types";
 
 interface RouteParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     const { data, error } = await supabase
       .from("chapters")
@@ -43,7 +43,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
 export async function PUT(request: NextRequest, { params }: RouteParams) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body: UpdateChapterData = await request.json();
 
     const { data, error } = await supabase
@@ -78,7 +78,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
 
 export async function DELETE(request: NextRequest, { params }: RouteParams) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     const { error } = await supabase.from("chapters").delete().eq("id", id);
 
