@@ -1,3 +1,5 @@
+import posthog from 'posthog-js';
+
 interface BlogFiltersProps {
   selectedAuthor: string;
   onAuthorChange: (author: string) => void;
@@ -22,7 +24,11 @@ export function BlogFilters({
             <div className="relative w-full sm:w-auto">
               <select
                 value={selectedAuthor}
-                onChange={(e) => onAuthorChange(e.target.value)}
+                onChange={(e) => {
+                  const newAuthor = e.target.value;
+                  onAuthorChange(newAuthor);
+                  posthog.capture('blog_author_filtered', { author: newAuthor });
+                }}
                 className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm font-medium text-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 w-full sm:min-w-[200px]"
               >
                 <option value="all">All Authors</option>
@@ -51,7 +57,10 @@ export function BlogFilters({
           </div>
           {selectedAuthor !== "all" && (
             <button
-              onClick={onClearFilter}
+              onClick={() => {
+                posthog.capture('blog_author_filter_cleared', { cleared_from_author: selectedAuthor });
+                onClearFilter();
+              }}
               className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300 self-start sm:self-auto"
             >
               <svg

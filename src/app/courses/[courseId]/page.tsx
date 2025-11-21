@@ -1,5 +1,6 @@
 "use client";
 
+import posthog from 'posthog-js';
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { useCourse } from "@/hooks/useCourses";
@@ -44,11 +45,21 @@ export default function CourseDetailPage() {
   );
 
   const handleChapterClick = (chapterId: string) => {
+    posthog.capture('chapter_selected', {
+        course_id: courseId,
+        chapter_id: chapterId,
+    });
     setSelectedChapterId(chapterId);
   };
 
   const handleChapterComplete = (chapterId: string) => {
-    if (isChapterComplete(courseId, chapterId)) {
+    const wasCompleted = isChapterComplete(courseId, chapterId);
+    posthog.capture('chapter_completion_toggled', {
+        course_id: courseId,
+        chapter_id: chapterId,
+        completed: !wasCompleted,
+    });
+    if (wasCompleted) {
       markChapterIncomplete(courseId, chapterId);
     } else {
       markChapterComplete(courseId, chapterId);

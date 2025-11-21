@@ -1,3 +1,4 @@
+import posthog from "posthog-js";
 import React from "react";
 import { PaginationProps } from "@/types/pagination.types";
 
@@ -67,7 +68,15 @@ export const Pagination: React.FC<PaginationProps> = ({
       <div className="flex items-center space-x-2">
         {/* Previous button */}
         <button
-          onClick={onPreviousPage}
+          onClick={() => {
+            posthog.capture("pagination_page_changed", {
+              direction: "previous",
+              currentPage: currentPage,
+              targetPage: currentPage - 1,
+              totalPages: totalPages,
+            });
+            onPreviousPage();
+          }}
           disabled={!hasPreviousPage}
           className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
             hasPreviousPage
@@ -86,7 +95,15 @@ export const Pagination: React.FC<PaginationProps> = ({
                 <span className="px-3 py-2 text-sm text-gray-500">...</span>
               ) : (
                 <button
-                  onClick={() => onPageChange(page as number)}
+                  onClick={() => {
+                    posthog.capture("pagination_page_changed", {
+                      direction: "specific",
+                      currentPage: currentPage,
+                      targetPage: page,
+                      totalPages: totalPages,
+                    });
+                    onPageChange(page as number);
+                  }}
                   className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                     page === currentPage
                       ? "text-white bg-primary border border-primary"
@@ -102,7 +119,15 @@ export const Pagination: React.FC<PaginationProps> = ({
 
         {/* Next button */}
         <button
-          onClick={onNextPage}
+          onClick={() => {
+            posthog.capture("pagination_page_changed", {
+              direction: "next",
+              currentPage: currentPage,
+              targetPage: currentPage + 1,
+              totalPages: totalPages,
+            });
+            onNextPage();
+          }}
           disabled={!hasNextPage}
           className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
             hasNextPage

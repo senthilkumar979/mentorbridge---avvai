@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { useAddBlog } from "@/hooks/useAddBlog";
 import Link from "next/link";
 import { useState } from "react";
+import posthog from 'posthog-js';
 
 export default function AddBlogPage() {
   const [url, setUrl] = useState("");
@@ -20,15 +21,25 @@ export default function AddBlogPage() {
 
     if (!url.trim()) {
       setMessage({ type: "error", text: "Please enter a Medium URL" });
+      posthog.capture('blog_submission_failed', {
+        reason: 'empty_url',
+        submitted_url: url
+      });
       return;
     }
 
     const result = await addBlog(url.trim());
 
     if (result.success) {
+      posthog.capture('blog_submission_succeeded', { blog_url: url.trim() });
       setMessage({ type: "success", text: "Blog added successfully!" });
       setUrl("");
     } else {
+      posthog.capture('blog_submission_failed', {
+        reason: 'api_error',
+        error_message: result.message || "Failed to add blog",
+        submitted_url: url.trim()
+      });
       setMessage({
         type: "error",
         text: result.message || "Failed to add blog",

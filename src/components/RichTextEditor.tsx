@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import posthog from 'posthog-js';
 import {
   Bold,
   Italic,
@@ -95,6 +96,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertLink = useCallback(() => {
     const url = prompt("Enter URL:");
     if (url) {
+      posthog.capture('rte_element_inserted', { element_type: 'link' });
       execCommand("createLink", url);
     }
   }, [execCommand]);
@@ -102,6 +104,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertImage = useCallback(() => {
     const url = prompt("Enter image URL:");
     if (url) {
+      posthog.capture('rte_element_inserted', { element_type: 'image' });
       execCommand("insertImage", url);
     }
   }, [execCommand]);
@@ -110,6 +113,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertAlert = useCallback(() => {
     const alertContent = prompt("Enter alert content:");
     if (alertContent) {
+      posthog.capture('rte_element_inserted', { element_type: 'alert' });
       const alertHtml = `
         <div class="alert alert-warning" style="
           background-color: #fef3c7;
@@ -132,6 +136,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertNote = useCallback(() => {
     const noteContent = prompt("Enter note content:");
     if (noteContent) {
+      posthog.capture('rte_element_inserted', { element_type: 'note' });
       const noteHtml = `
         <div class="note" style="
           background-color: #f0f9ff;
@@ -154,6 +159,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertInfo = useCallback(() => {
     const infoContent = prompt("Enter info content:");
     if (infoContent) {
+      posthog.capture('rte_element_inserted', { element_type: 'info' });
       const infoHtml = `
         <div class="info" style="
           background-color: #f0fdf4;
@@ -176,6 +182,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   const insertSingleColumn = useCallback(() => {
     const content = prompt("Enter single column content:");
     if (content) {
+      posthog.capture('rte_element_inserted', { element_type: 'single_column' });
       const columnHtml = `
         <div class="single-column" style="
           background-color: #f8fafc;
@@ -195,6 +202,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
     const leftContent = prompt("Enter left column content:");
     const rightContent = prompt("Enter right column content:");
     if (leftContent && rightContent) {
+      posthog.capture('rte_element_inserted', { element_type: 'two_columns' });
       const columnsHtml = `
         <div class="two-columns" style="
           display: grid;
@@ -231,6 +239,8 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
     const cols = prompt("Enter number of columns (2-6):", "3");
     const numRows = Math.min(Math.max(parseInt(rows || "3") || 3, 2), 10);
     const numCols = Math.min(Math.max(parseInt(cols || "3") || 3, 2), 6);
+
+    posthog.capture('rte_table_inserted', { rows: numRows, columns: numCols });
 
     let tableHtml = `
       <table style="

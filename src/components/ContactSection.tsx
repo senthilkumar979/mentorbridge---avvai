@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { SectionProps } from "@/types";
+import posthog from 'posthog-js';
 
 export const ContactSection: React.FC<SectionProps> = ({
   className = "",
@@ -43,16 +44,25 @@ export const ContactSection: React.FC<SectionProps> = ({
       });
 
       if (response.ok) {
+        posthog.capture('contact-form-submitted', {
+          message_length: formData.message.length,
+        });
         setSubmitStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
         const errorData = await response.json();
+        posthog.capture('contact-form-submission-failed', {
+          error: errorData.error || 'api_error',
+        });
         console.error("Form submission error:", errorData);
         setSubmitStatus("error");
         // Log detailed error for debugging
         console.error("Error details:", errorData.details || errorData.error);
       }
     } catch (error) {
+      posthog.capture('contact-form-submission-failed', {
+        error: 'network_error',
+      });
       console.error("Network error:", error);
       setSubmitStatus("error");
     } finally {

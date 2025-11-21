@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import posthog from "posthog-js";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -253,6 +254,16 @@ export default function ProfileFormPage() {
           picture: "Profile saved successfully!",
         }));
 
+        posthog.capture("profile-form-submitted", {
+          status: "success",
+          student_id: data.id,
+          has_picture_file: !!(data.pictureFile && data.pictureFile.length > 0),
+          has_resume_file: !!(data.resumeFile && data.resumeFile.length > 0),
+          experience_count: cleanedData.experience.length,
+          skill_count: cleanedData.skillSets.length,
+          inspiration_count: cleanedData.inspirations.length,
+        });
+
         console.log(
           "Form submitted with data:",
           JSON.stringify(cleanedData, null, 2)
@@ -276,6 +287,14 @@ export default function ProfileFormPage() {
       console.error("Submission error:", error);
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
+      posthog.capture("profile-form-submitted", {
+        status: "failure",
+        student_id: data.id,
+        error_message: errorMessage,
+        has_picture_file: !!(data.pictureFile && data.pictureFile.length > 0),
+        has_resume_file: !!(data.resumeFile && data.resumeFile.length > 0),
+        experience_count: data.experience.length,
+      });
       alert(`Failed to submit profile: ${errorMessage}`);
     } finally {
       setIsUploading(false);
@@ -594,14 +613,17 @@ export default function ProfileFormPage() {
                 </h2>
                 <button
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
                     appendExperience({
                       company: "",
                       role: "",
                       summary: "",
                       website: "",
-                    })
-                  }
+                    });
+                    posthog.capture("profile-form-experience-added", {
+                      new_experience_count: experienceFields.length + 1,
+                    });
+                  }}
                   className="px-4 py-2 bg-[#d53f8c] text-white rounded-md hover:bg-[#b83280] transition-colors"
                 >
                   + Add

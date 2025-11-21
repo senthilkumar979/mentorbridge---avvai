@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import posthog from "posthog-js";
+import React, { useEffect } from "react";
 import { products } from "../../data/products";
 
 interface ProductDetailPageProps {
@@ -9,15 +12,69 @@ interface ProductDetailPageProps {
   }>;
 }
 
-export default async function ProductDetailPage({
+export default function ProductDetailPageWrapper({
   params,
 }: ProductDetailPageProps) {
-  const { id } = await params;
+  // This wrapper converts the async params prop (provided by Next.js in server components) to a client value for the inner component.
+  // We must avoid making ProductDetailPage itself async so we can use hooks/events.
+  const [clientParams, setClientParams] = React.useState<{ id: string } | null>(
+    null
+  );
+  useEffect(() => {
+    params.then((data) => setClientParams(data));
+    // We want to run this only once on mount.
+    // eslint-disable-next-line
+  }, []);
+  if (!clientParams) return null;
+  return <ProductDetailPage clientParams={clientParams} />;
+}
+
+function ProductDetailPage({ clientParams }: { clientParams: { id: string } }) {
+  const { id } = clientParams;
   const product = products.find((p) => p.id === id);
+
+  useEffect(() => {
+    if (product) {
+      posthog.capture("product_detail_viewed", {
+        product_id: product.id,
+        product_name: product.name,
+      });
+    } else {
+      posthog.capture("product_detail_not_found", {
+        product_id: id,
+      });
+    }
+    // Only fire on mount or when id/product changes
+  }, [id, product]);
 
   if (!product) {
     notFound();
   }
+
+  // Handler for main site click
+  const handleVisitWebsite = (location: string) => {
+    posthog.capture("visit_product_website_clicked", {
+      product_id: product.id,
+      product_name: product.name,
+      location,
+    });
+  };
+
+  // Handler for 'Back to Home' click
+  const handleBackToHomeClick = () => {
+    posthog.capture("product_detail_back_to_home_clicked", {
+      product_id: product.id,
+      product_name: product.name,
+    });
+  };
+
+  // Handler for 'View All Products' click
+  const handleViewAllProductsClick = () => {
+    posthog.capture("product_detail_view_all_products_clicked", {
+      product_id: product.id,
+      product_name: product.name,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pb-12">
@@ -28,6 +85,12 @@ export default async function ProductDetailPage({
               <Link
                 href="/"
                 className="text-2xl font-bold text-[#d53f8c] hover:text-[#b83280] transition-colors duration-300"
+                onClick={() =>
+                  posthog.capture("product_detail_mentorbridge_home_clicked", {
+                    product_id: product.id,
+                    product_name: product.name,
+                  })
+                }
               >
                 MentorBridge
               </Link>
@@ -37,6 +100,7 @@ export default async function ProductDetailPage({
             <Link
               href="/#products"
               className="text-[#d53f8c] hover:text-[#b83280] font-medium transition-colors duration-300"
+              onClick={handleBackToHomeClick}
             >
               ← Back to Home
             </Link>
@@ -59,6 +123,7 @@ export default async function ProductDetailPage({
                 href={product.website}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleVisitWebsite("header")}
                 className="inline-flex items-center bg-gradient-to-r from-[#d53f8c] to-[#b83280] text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <span className="mr-2">Visit Website</span>
@@ -158,6 +223,7 @@ export default async function ProductDetailPage({
               href={product.website}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleVisitWebsite("cta")}
               className="inline-flex items-center bg-gradient-to-r from-[#d53f8c] to-[#b83280] text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span className="mr-2">Get Started</span>
@@ -178,6 +244,7 @@ export default async function ProductDetailPage({
             <Link
               href="/products"
               className="inline-flex items-center bg-gray-100 text-gray-700 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-gray-200"
+              onClick={handleViewAllProductsClick}
             >
               <span className="mr-2">View All Products</span>
               <svg

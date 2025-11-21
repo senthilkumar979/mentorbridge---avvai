@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { BaseComponentProps } from "@/types";
+import posthog from 'posthog-js';
 
 export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,6 +99,12 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
+                posthog.capture('navigation_link_clicked', {
+                  link_text: 'Logo',
+                  link_url: '#home',
+                  is_page_navigation: false,
+                  location: 'header_logo'
+                });
                 scrollToSection("#home");
               }}
               className="flex items-center space-x-2"
@@ -120,6 +127,12 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
+                  posthog.capture('navigation_link_clicked', {
+                    link_text: item.label,
+                    link_url: item.href,
+                    is_page_navigation: item.isPage || false,
+                    location: 'header_desktop'
+                  });
                   scrollToSection(item.href, item.isPage);
                 }}
                 className={`text-sm font-medium transition-all duration-300 relative ${
@@ -147,7 +160,12 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                posthog.capture('mobile_menu_toggled', {
+                  state: !isMobileMenuOpen ? 'opened' : 'closed'
+                });
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
               className={`transition-colors duration-300 ${
                 isClient && isScrolled
                   ? "text-gray-700 hover:text-[#d53f8c]"
@@ -191,6 +209,12 @@ export const Header: React.FC<BaseComponentProps> = ({ className = "" }) => {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
+                    posthog.capture('navigation_link_clicked', {
+                      link_text: item.label,
+                      link_url: item.href,
+                      is_page_navigation: item.isPage || false,
+                      location: 'header_mobile'
+                    });
                     scrollToSection(item.href, item.isPage);
                   }}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${

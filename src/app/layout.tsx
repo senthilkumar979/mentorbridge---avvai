@@ -1,4 +1,4 @@
-import { EventPopupProvider, QueryProvider } from "@/components";
+import { Clarity, EventPopupProvider, QueryProvider } from "@/components";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -60,12 +60,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://t.contentsquare.net/uxa/5027a5ad08b17.js" async></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <QueryProvider>
           <EventPopupProvider />
+          <Clarity />
           {children}
           <Analytics />
           <SpeedInsights />

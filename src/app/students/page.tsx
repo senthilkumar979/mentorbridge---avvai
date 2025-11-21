@@ -1,10 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import posthog from "posthog-js";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Footer, StudentCard, StudentsFilters } from "../../components";
 import { SubPageHeader } from "../../components/SubPageHeader";
 import { useStudents } from "../../hooks/useStudents";
+import { ProfileData } from "../../types/Profile.types";
 
 export default function StudentsPage() {
   const router = useRouter();
@@ -12,6 +14,14 @@ export default function StudentsPage() {
   const [selectedRole, setSelectedRole] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
+
+  // Fire a PostHog event on initial page load
+  useEffect(() => {
+    // Only run client-side and if PostHog is loaded
+    if (typeof window !== "undefined" && posthog && posthog.capture) {
+      posthog.capture("students_page_viewed");
+    }
+  }, []);
 
   // Fetch students data from Supabase
   const { students, loading, error, refetch } = useStudents();
@@ -62,11 +72,63 @@ export default function StudentsPage() {
     });
   }, [students, searchTerm, selectedRole, selectedCompany, selectedBatch]);
 
+  // -- PostHog helpers for tracking events --
+  // Track filter changes
+  useEffect(() => {
+    // Skip initial mount if everything is blank
+    if (
+      searchTerm === "" &&
+      selectedRole === "" &&
+      selectedCompany === "" &&
+      selectedBatch === ""
+    ) {
+      return;
+    }
+
+    if (typeof window !== "undefined" && posthog && posthog.capture) {
+      posthog.capture("students_filters_updated", {
+        searchTerm,
+        selectedRole,
+        selectedCompany,
+        selectedBatch,
+      });
+    }
+  }, [searchTerm, selectedRole, selectedCompany, selectedBatch]);
+
+  // Track clicking "Try Again"
+  const handleRefetchClick = useCallback(() => {
+    if (typeof window !== "undefined" && posthog && posthog.capture) {
+      posthog.capture("students_try_again_clicked");
+    }
+    refetch();
+  }, [refetch]);
+
+  // Track clicking a student (card click)
+  const handleStudentCardClick = useCallback(
+    (profile: ProfileData) => {
+      if (typeof window !== "undefined" && posthog && posthog.capture) {
+        posthog.capture("students_student_selected", {
+          student_id: profile.id,
+          name: profile.name,
+          role: profile.role,
+          company: profile.company,
+          batch: profile.batch,
+        });
+      }
+      router.push(`/student-detail/${profile.id}`);
+    },
+    [router]
+  );
+
+  // Track filters cleared
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedRole("");
     setSelectedCompany("");
     setSelectedBatch("");
+    if (typeof window !== "undefined" && posthog && posthog.capture) {
+      posthog.capture("students_filters_cleared");
+    }
   };
 
   return (
@@ -125,7 +187,7 @@ export default function StudentsPage() {
               </h3>
               <p className="text-slate-600 text-lg mb-6">{error}</p>
               <button
-                onClick={refetch}
+                onClick={handleRefetchClick}
                 className="px-6 py-3 bg-pink-500 text-white rounded-xl hover:bg-pink-600 transition-colors duration-200 font-semibold"
               >
                 Try Again
@@ -163,9 +225,7 @@ export default function StudentsPage() {
                     >
                       <StudentCard
                         profile={profile}
-                        onClick={() =>
-                          router.push(`/student-detail/${profile.id}`)
-                        }
+                        onClick={() => handleStudentCardClick(profile)}
                       />
                     </div>
                   ))}

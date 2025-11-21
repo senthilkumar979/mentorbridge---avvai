@@ -11,6 +11,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.27.16",
     "@hookform/resolvers": "^5.2.2",
+    "@microsoft/clarity": "^1.0.0",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-popover": "^1.1.15",
     "@supabase/supabase-js": "^2.53.1",
@@ -50,6 +51,8 @@
     "lowlight": "^3.3.0",
     "lucide-react": "^0.544.0",
     "next": "15.4.6",
+    "posthog-js": "^1.297.2",
+    "posthog-node": "^5.13.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",

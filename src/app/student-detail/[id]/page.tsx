@@ -4,6 +4,8 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useStudent } from "../../../hooks/useStudent";
 import { Footer } from "../../../components";
+import { useEffect } from "react";
+import posthog from "posthog-js";
 
 export default function StudentDetailPage() {
   const params = useParams();
@@ -13,9 +15,34 @@ export default function StudentDetailPage() {
   // Fetch student data from Supabase
   const { student, loading, error, refetch } = useStudent(studentId);
 
+  // Fire PostHog pageview when student data is loaded
+  useEffect(() => {
+    if (!loading && !error && student) {
+      posthog.capture("student_detail_viewed", {
+        studentId: studentId,
+        studentName: student.name,
+        studentEmail: student.email,
+        studentBatch: student.batch,
+      });
+    } else if (!loading && error) {
+      posthog.capture("student_detail_error", {
+        studentId: studentId,
+        error: error,
+      });
+    } else if (!loading && !error && !student) {
+      posthog.capture("student_detail_not_found", {
+        studentId: studentId,
+      });
+    }
+  }, [loading, error, student, studentId]);
+
   const downloadResume = () => {
     if (student) {
       if (student.resumeLink) {
+        posthog.capture("student_resume_download_clicked", {
+          studentId: studentId,
+          studentName: student.name,
+        });
         window.open(student.resumeLink, "_blank");
       }
     }
@@ -50,13 +77,25 @@ export default function StudentDetailPage() {
           <p className="text-slate-600 mb-8">{error}</p>
           <div className="space-x-4">
             <button
-              onClick={refetch}
+              onClick={() => {
+                posthog.capture("student_detail_retry_clicked", {
+                  studentId: studentId,
+                  error: error,
+                });
+                refetch();
+              }}
               className="px-6 py-3 bg-pink-500 text-white font-semibold rounded-xl hover:bg-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Try Again
             </button>
             <button
-              onClick={() => router.push("/students")}
+              onClick={() => {
+                posthog.capture("student_detail_back_to_students_clicked", {
+                  studentId: studentId,
+                  error: error,
+                });
+                router.push("/students");
+              }}
               className="px-6 py-3 bg-slate-500 text-white font-semibold rounded-xl hover:bg-slate-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Back to Students
@@ -80,7 +119,13 @@ export default function StudentDetailPage() {
             The student you&apos;re looking for doesn&apos;t exist.
           </p>
           <button
-            onClick={() => router.push("/students")}
+            onClick={() => {
+              posthog.capture("student_detail_back_to_students_clicked", {
+                studentId: studentId,
+                notFound: true,
+              });
+              router.push("/students");
+            }}
             className="px-6 py-3 bg-gradient-to-r from-pink-500 to-pink-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             Back to Students
@@ -96,7 +141,12 @@ export default function StudentDetailPage() {
         {/* Back Button */}
         <div className="mb-8">
           <button
-            onClick={() => router.push("/students")}
+            onClick={() => {
+              posthog.capture("student_detail_back_to_students_clicked", {
+                studentId: studentId,
+              });
+              router.push("/students");
+            }}
             className="inline-flex items-center px-4 py-2 text-slate-600 hover:text-slate-800 transition-colors duration-200"
           >
             <svg
@@ -140,6 +190,7 @@ export default function StudentDetailPage() {
                   onClick={downloadResume}
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-xl transition-colors duration-200"
+                  style={{ cursor: "pointer" }}
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -187,6 +238,12 @@ export default function StudentDetailPage() {
                     <a
                       href={`mailto:${student.email}`}
                       className="text-sm font-semibold text-pink-600 px-4 py-2 flex items-center justify-center"
+                      onClick={() =>
+                        posthog.capture("student_email_clicked", {
+                          studentId: studentId,
+                          studentEmail: student.email,
+                        })
+                      }
                     >
                       <svg
                         className="w-4 h-4 mr-2"
@@ -211,6 +268,12 @@ export default function StudentDetailPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      onClick={() =>
+                        posthog.capture("student_linkedin_clicked", {
+                          studentId: studentId,
+                          linkedIn: student.socialLinks.linkedIn,
+                        })
+                      }
                     >
                       <svg
                         className="w-4 h-4"
@@ -228,6 +291,12 @@ export default function StudentDetailPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      onClick={() =>
+                        posthog.capture("student_github_clicked", {
+                          studentId: studentId,
+                          gitHub: student.socialLinks.gitHub,
+                        })
+                      }
                     >
                       <svg
                         className="w-4 h-4"
@@ -245,6 +314,12 @@ export default function StudentDetailPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      onClick={() =>
+                        posthog.capture("student_website_clicked", {
+                          studentId: studentId,
+                          website: student.socialLinks.website,
+                        })
+                      }
                     >
                       <svg
                         className="w-4 h-4"
@@ -338,6 +413,14 @@ export default function StudentDetailPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-pink-600 hover:text-pink-700 mt-3 text-sm font-medium"
+                        onClick={() =>
+                          posthog.capture("student_experience_website_clicked", {
+                            studentId: studentId,
+                            expCompany: exp.company,
+                            expRole: exp.role,
+                            website: exp.website,
+                          })
+                        }
                       >
                         Visit Website
                         <svg
@@ -397,6 +480,12 @@ export default function StudentDetailPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-pink-600 hover:text-pink-700 text-sm font-medium"
+                    onClick={() =>
+                      posthog.capture("student_mentorbridge_website_clicked", {
+                        studentId: studentId,
+                        website: student.mentorBridgeExp.website,
+                      })
+                    }
                   >
                     Visit Website
                     <svg
