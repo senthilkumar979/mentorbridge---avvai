@@ -332,7 +332,6 @@ const ChapterItem: React.FC<ChapterItemProps> = ({
   isSelected,
   isComplete,
   onClick,
-  onToggleComplete,
 }) => {
   return (
     <div

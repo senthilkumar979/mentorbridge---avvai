@@ -15,7 +15,7 @@ import { profileSchema } from "./profileSchema";
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 export default function ProfileFormPage() {
-  const [submittedData, setSubmittedData] = useState<ProfileData | null>(null);
+  const [setSubmittedData] = useState<ProfileData | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<{
     picture: string | null;
