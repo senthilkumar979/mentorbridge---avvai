@@ -15,7 +15,6 @@ import { profileSchema } from "./profileSchema";
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 export default function ProfileFormPage() {
-  const [setSubmittedData] = useState<ProfileData | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<{
     picture: string | null;
@@ -248,7 +247,6 @@ export default function ProfileFormPage() {
 
       try {
         const savedRecord = await saveStudentProfile(cleanedData);
-        setSubmittedData(cleanedData);
         setUploadProgress((prev) => ({
           ...prev,
           picture: "Profile saved successfully!",
