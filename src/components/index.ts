@@ -8,6 +8,7 @@ export { MentorsSection } from "./MentorsSection";
 export { ContactSection } from "./ContactSection";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
+export { SubPageHeader } from "./SubPageHeader";
 export { Testimonials } from "./Testimonials";
 export { Gallery } from "./Gallery";
 export { Pagination } from "./Pagination";
